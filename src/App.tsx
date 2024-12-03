@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import CostOverview from './components/CostOverview';
+import Estimator from './components/Estimator';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <main>
+        <CostOverview />
+        <Estimator />
+      </main>
     </div>
   );
 }
