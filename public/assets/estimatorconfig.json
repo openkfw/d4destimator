@@ -1,0 +1,74 @@
+{
+  "flavour": "IT system",
+  "author": "jzakotnik",
+  "version": "0.1",
+  "parameters": {
+    "users": {
+      "label": "Users",
+      "values": [
+        {
+          "inputFactor": "<10",
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "10-50",
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "10"
+        },
+        {
+          "inputFactor": "50+",
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "30"
+        }
+      ]
+    },
+    "integrations": {
+      "label": "Integrated Systems",
+      "values": [
+        {
+          "inputFactor": "0",
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "1-3",
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "3+",
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
+    }
+  },
+  "constants": {
+    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" }
+  }
+}
