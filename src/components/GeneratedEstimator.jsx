@@ -8,14 +8,16 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-import estimatorConfig from "../assets/estimatorconfig.json";
+import runEngine from "../utils/runEngine";
 
-const Estimator = (props) => {
+const GeneratedEstimator = ({ estimatorConfig }) => {
   const [inputParameters, setInputParameters] = useState(
     estimatorConfig.parameters
   );
 
-  const handleChange = (event) => {};
+  const handleChange = (event) => {
+    //testing engine
+  };
 
   const dropdownItems = ["Placeholder 1", "Placeholder 2", "Placeholder 3"];
   return (
@@ -45,4 +47,4 @@ const Estimator = (props) => {
   );
 };
 
-export default Estimator;
+export default GeneratedEstimator;

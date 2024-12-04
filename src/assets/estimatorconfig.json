@@ -74,6 +74,20 @@
       ]
     }
   },
+  "costs": {
+    "hardware": { "label": "Hardware", "value": "100000" },
+    "procurement": { "label": "Procurement", "value": "300000" },
+    "infrastructureConfiguration": {
+      "label": "Infrastructure configuration",
+      "value": "40000"
+    },
+    "integrationSystems": {
+      "label": "Integration of systems",
+      "value": "30000"
+    },
+    "securitySetup": { "label": "Security setup", "value": "10000" },
+    "training": { "label": "Training", "value": "30000" }
+  },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" }
   }
