@@ -9,8 +9,14 @@ import GeneratedEstimator from "./components/GeneratedEstimator";
 function App() {
   return (
     <div className="App">
-      <GeneratedEstimator />
-      <CostOverview />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>
+          <GeneratedEstimator />
+        </div>
+        <div>
+          <CostOverview />
+        </div>
+      </div>
     </div>
   );
 }
