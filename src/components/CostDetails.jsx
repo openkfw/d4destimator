@@ -1,76 +1,15 @@
-import React, { useState } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  TextField,
-  Box,
-  Typography
-} from "@mui/material";
-import CostSummary from './CostSummary';
-import CostDetails from "./CostDetails";
+import React from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Paper } from '@mui/material';
 
-const CostOverview = ({ estimatorConfig }) => {
-  const [costs, setCosts] = useState({
-    hardwareInitial: "",
-    hardwareRun: "-",
-    procurementInitial: "",
-    procurementRun: "-",
-    infrastructureInitial: "",
-    infrastructureRun: "-",
-    integrationInitial: "",
-    integrationRun: "-",
-    securityInitial: "",
-    securityRun: "-",
-    monitoringInitial: "",
-    monitoringRun: "-",
-    documentationInitial: "",
-    documentationRun: "-",
-    changeManagementInitial: "",
-    changeManagementRun: "-",
-    adminTrainingInitial: "",
-    adminTrainingRun: "-",
-    userTrainingInitial: "",
-    userTrainingRun: "-",
-    adminOverheadInitial: "",
-    adminOverheadRun: "-",
-    analysisDesignInitial: "",
-  });
-
-  const handleChange = (field, value) => {
-    setCosts((prevCosts) => ({
-      ...prevCosts,
-      [field]: value,
-      [`${field.replace("Initial", "Run")}`]: value
-        ? (parseFloat(value) * 0.2).toFixed(2)
-        : "-",
-    }));
-  };
-
-  const totalInitial = Object.keys(costs)
-    .filter((key) => key.endsWith("Initial"))
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0);
-  const totalRun = Object.keys(costs)
-    .filter((key) => key.endsWith("Run") && costs[key] !== "-")
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0)
-    .toFixed(2);
-  const totalCostOfOwnership = (totalInitial + totalRun * 3).toFixed(2);
-
+const CostDetails = ({ costs, handleChange }) => {
   return (
-
-    <div>
-    <CostSummary totalInitial={totalInitial} totalRun={totalRun} totalCostOfOwnership={totalCostOfOwnership} />
-     <TableContainer component={Paper}>
+    <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Components at Partner</TableCell>
-            <TableCell>Initial cost</TableCell>
-            <TableCell>Run Cost per year</TableCell>
+            <TableCell style={{ fontWeight: 'bold', backgroundColor: '#f0f0f0' }}>Components at Partner</TableCell>
+            <TableCell style={{ fontWeight: 'bold', backgroundColor: '#f0f0f0' }}>Initial cost</TableCell>
+            <TableCell style={{ fontWeight: 'bold', backgroundColor: '#f0f0f0' }}>Run Cost per year</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -83,13 +22,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.hardwareInitial}
-                onChange={(e) =>
-                  handleChange("hardwareInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('hardwareInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.hardwareRun} €</TableCell>
           </TableRow>
@@ -102,13 +39,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.procurementInitial}
-                onChange={(e) =>
-                  handleChange("procurementInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('procurementInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.procurementRun} €</TableCell>
           </TableRow>
@@ -118,13 +53,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.infrastructureInitial}
-                onChange={(e) =>
-                  handleChange("infrastructureInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('infrastructureInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.infrastructureRun} €</TableCell>
           </TableRow>
@@ -134,13 +67,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.integrationInitial}
-                onChange={(e) =>
-                  handleChange("integrationInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('integrationInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.integrationRun} €</TableCell>
           </TableRow>
@@ -153,13 +84,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.securityInitial}
-                onChange={(e) =>
-                  handleChange("securityInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('securityInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.securityRun} €</TableCell>
           </TableRow>
@@ -169,13 +98,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.monitoringInitial}
-                onChange={(e) =>
-                  handleChange("monitoringInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('monitoringInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.monitoringRun} €</TableCell>
           </TableRow>
@@ -185,13 +112,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.documentationInitial}
-                onChange={(e) =>
-                  handleChange("documentationInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('documentationInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.documentationRun} €</TableCell>
           </TableRow>
@@ -201,13 +126,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.changeManagementInitial}
-                onChange={(e) =>
-                  handleChange("changeManagementInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('changeManagementInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.changeManagementRun} €</TableCell>
           </TableRow>
@@ -217,13 +140,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.adminTrainingInitial}
-                onChange={(e) =>
-                  handleChange("adminTrainingInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('adminTrainingInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.adminTrainingRun} €</TableCell>
           </TableRow>
@@ -233,13 +154,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.userTrainingInitial}
-                onChange={(e) =>
-                  handleChange("userTrainingInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('userTrainingInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.userTrainingRun} €</TableCell>
           </TableRow>
@@ -249,13 +168,11 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.adminOverheadInitial}
-                onChange={(e) =>
-                  handleChange("adminOverheadInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('adminOverheadInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>{costs.adminOverheadRun} €</TableCell>
           </TableRow>
@@ -265,35 +182,18 @@ const CostOverview = ({ estimatorConfig }) => {
               <TextField
                 type="text"
                 value={costs.analysisDesignInitial}
-                onChange={(e) =>
-                  handleChange("analysisDesignInitial", e.target.value)
-                }
+                onChange={(e) => handleChange('analysisDesignInitial', e.target.value)}
                 variant="outlined"
                 size="small"
-              />{" "}
-              €
+                style={{ margin: 0, padding: 0 }}
+              /> €
             </TableCell>
             <TableCell>-</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Initial costs</TableCell>
-            <TableCell>{totalInitial} €</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Run costs (per year)</TableCell>
-            <TableCell></TableCell>
-            <TableCell>{totalRun} €</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Total cost of ownership (3 years)</TableCell>
-            <TableCell colSpan={2}>{totalCostOfOwnership} €</TableCell>
           </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
-    </div>
   );
 };
 
-export default CostOverview;
+export default CostDetails;
