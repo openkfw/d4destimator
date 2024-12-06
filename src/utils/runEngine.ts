@@ -19,7 +19,7 @@ export default function runEngine(config: any) {
         (x: any) => x.selected
       )[0]; //I hope that only one parameter is set to true!
 
-      console.log("Selected parameter", selectedParameter);
+      //console.log("Selected parameter", selectedParameter);
 
       //now use the selected parameter and add everything together
 
@@ -29,11 +29,14 @@ export default function runEngine(config: any) {
           ([key, _]) => key !== "inputFactor" && key !== "selected"
         )
       );
-      calculatedConfig.costs[costkey].value += Object.values(
-        filteredValues
-      ).reduce((sum: any, value: any) => {
-        return sum + parseInt(value, 10);
-      }, 0);
+      /*console.log(
+        "Adding some efforts",
+        calculatedConfig.costs[costkey].value,
+        filteredValues[costkey]
+      );*/
+      calculatedConfig.costs[costkey].value +=
+        parseInt(filteredValues[costkey] as string) *
+        calculatedConfig.constants.dailyrate.value;
     });
   });
 
