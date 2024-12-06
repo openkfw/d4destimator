@@ -14,7 +14,7 @@ export default function runEngine(config: any) {
     parameterKeys.map((param: any) => {
       console.log("Checking parameter", param);
       const selectedParameter = config.parameters[param].values.filter(
-        (x: any) => x.selected == true
+        (x: any) => x.selected == true,
       );
       console.log("Selected parameter", selectedParameter);
     });
