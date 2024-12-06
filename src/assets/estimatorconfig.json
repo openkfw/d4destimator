@@ -75,18 +75,33 @@
     }
   },
   "costs": {
-    "hardware": { "label": "Hardware", "value": "100000" },
-    "procurement": { "label": "Procurement", "value": "300000" },
+    "hardware": { "label": "Hardware", "value": "0.20" },
+    "procurement": { "label": "Procurement process", "value": "0.60" },
     "infrastructureConfiguration": {
       "label": "Infrastructure configuration",
-      "value": "40000"
+      "value": "0.80"
     },
     "integrationSystems": {
-      "label": "Integration of systems",
-      "value": "30000"
+      "label": "Integration of other systems via API",
+      "value": "1.00"
     },
-    "securitySetup": { "label": "Security setup", "value": "10000" },
-    "training": { "label": "Training", "value": "30000" }
+    "securitySetup": { "label": "Security setup", "value": "-" },
+    "monitoringSetup": { "label": "Monitoring setup", "value": "-" },
+    "documentationAdaptation": {
+      "label": "Adapt documentation to local requirements",
+      "value": "-"
+    },
+    "changeManagement": {
+      "label": "Change Management business processes",
+      "value": "-"
+    },
+    "adminTraining": { "label": "Administrator training", "value": "-" },
+    "userTraining": { "label": "User training", "value": "-" },
+    "adminOverhead": { "label": "Admin overhead", "value": "-" },
+    "initialAnalysisDesign": {
+      "label": "Initial analyse and design",
+      "value": "-"
+    }
   },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" }
