@@ -11,8 +11,6 @@ import {
   Box,
   Typography
 } from "@mui/material";
-import CostSummary from './CostSummary';
-import CostDetails from "./CostDetails";
 
 const CostOverview = ({ estimatorConfig }) => {
   const [costs, setCosts] = useState({
@@ -61,10 +59,13 @@ const CostOverview = ({ estimatorConfig }) => {
   const totalCostOfOwnership = (totalInitial + totalRun * 3).toFixed(2);
 
   return (
-
-    <div>
-    <CostSummary totalInitial={totalInitial} totalRun={totalRun} totalCostOfOwnership={totalCostOfOwnership} />
-     <TableContainer component={Paper}>
+    
+    <Box p={2} component={Paper}>
+      <Typography variant="h6">Total Initial Cost: {totalInitial} €</Typography>
+      <Typography variant="h6">Total Run Cost per Year: {totalRun} €</Typography>
+      <Typography variant="h6">Total Cost of Ownership (3 years): {totalCostOfOwnership} €</Typography>
+      
+    <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
@@ -292,7 +293,7 @@ const CostOverview = ({ estimatorConfig }) => {
         </TableBody>
       </Table>
     </TableContainer>
-    </div>
+    </Box>
   );
 };
 
