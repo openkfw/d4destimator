@@ -8,6 +8,7 @@ import GeneratedEstimator from "./components/GeneratedEstimator";
 import runEngine from "./utils/runEngine";
 
 import estimatorConfig from "./assets/estimatorconfig.json";
+import CostDetails from "./components/CostDetails";
 
 function App() {
   const [calculation, setCalculation] = useState(estimatorConfig);
@@ -21,10 +22,10 @@ function App() {
     <div className="App">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <GeneratedEstimator estimatorConfig={estimatorConfig} />
+          <GeneratedEstimator estimatorConfig={calculation} />
         </div>
         <div>
-          <CostOverview estimatorConfig={calculation} />
+          <CostDetails config={calculation} handleChange={null} />
         </div>
       </div>
     </div>

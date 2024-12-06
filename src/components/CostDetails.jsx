@@ -9,9 +9,8 @@ import {
   Paper,
   TextField,
 } from "@mui/material";
-import config from "../assets/estimatorconfig.json";
 
-const CostDetails = ({ costs, handleChange }) => {
+const CostDetails = ({ config, handleChange }) => {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -29,7 +28,7 @@ const CostDetails = ({ costs, handleChange }) => {
               <TableCell>
                 <TextField
                   type="text"
-                  value={costs[`${key}Initial`]}
+                  value={config.costs[`${key}Initial`]}
                   onChange={(e) =>
                     handleChange(`${key}Initial`, e.target.value)
                   }
@@ -38,7 +37,7 @@ const CostDetails = ({ costs, handleChange }) => {
                 />{" "}
                 €
               </TableCell>
-              <TableCell>{costs[`${key}Run`] || "-"} €</TableCell>
+              <TableCell>{config.costs[`${key}Run`] || "-"} €</TableCell>
             </TableRow>
           ))}
         </TableBody>

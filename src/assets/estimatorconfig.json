@@ -85,22 +85,22 @@
       "label": "Integration of other systems via API",
       "value": "1.00"
     },
-    "securitySetup": { "label": "Security setup", "value": "-" },
-    "monitoringSetup": { "label": "Monitoring setup", "value": "-" },
+    "securitySetup": { "label": "Security setup", "value": "0" },
+    "monitoringSetup": { "label": "Monitoring setup", "value": "0" },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
-      "value": "-"
+      "value": "0"
     },
     "changeManagement": {
       "label": "Change Management business processes",
-      "value": "-"
+      "value": "0"
     },
-    "adminTraining": { "label": "Administrator training", "value": "-" },
-    "userTraining": { "label": "User training", "value": "-" },
-    "adminOverhead": { "label": "Admin overhead", "value": "-" },
+    "adminTraining": { "label": "Administrator training", "value": "0" },
+    "userTraining": { "label": "User training", "value": "0" },
+    "adminOverhead": { "label": "Admin overhead", "value": "0" },
     "initialAnalysisDesign": {
       "label": "Initial analyse and design",
-      "value": "-"
+      "value": "0"
     }
   },
   "constants": {
