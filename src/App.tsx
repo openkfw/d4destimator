@@ -10,10 +10,11 @@ import runEngine from "./utils/runEngine";
 import estimatorConfig from "./assets/estimatorconfig.json";
 
 function App() {
-  const [calculation, setCalculation] = useState();
+  const [calculation, setCalculation] = useState(estimatorConfig);
   useEffect(() => {
-    const result = runEngine(estimatorConfig);
+    const result = runEngine(estimatorConfig) as any;
     setCalculation(result);
+
     console.log("Running engine:", result);
   }, []);
   return (
