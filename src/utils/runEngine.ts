@@ -21,8 +21,6 @@ export default function runEngine(config: any) {
 
       //console.log("Selected parameter", selectedParameter);
 
-      //now use the selected parameter and add everything together
-
       //for the calculation runner, we don't need the flag if it's selected and what the inputFactor was
       const filteredValues = Object.fromEntries(
         Object.entries(selectedParameter).filter(
