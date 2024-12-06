@@ -8,58 +8,11 @@ import {
   TableRow,
   Paper,
   TextField,
-  Box,
-  Typography
 } from "@mui/material";
 
-const CostDetails = ({ estimatorConfig }) => {
-  const [costs, setCosts] = useState({
-    hardwareInitial: "",
-    hardwareRun: "-",
-    procurementInitial: "",
-    procurementRun: "-",
-    infrastructureInitial: "",
-    infrastructureRun: "-",
-    integrationInitial: "",
-    integrationRun: "-",
-    securityInitial: "",
-    securityRun: "-",
-    monitoringInitial: "",
-    monitoringRun: "-",
-    documentationInitial: "",
-    documentationRun: "-",
-    changeManagementInitial: "",
-    changeManagementRun: "-",
-    adminTrainingInitial: "",
-    adminTrainingRun: "-",
-    userTrainingInitial: "",
-    userTrainingRun: "-",
-    adminOverheadInitial: "",
-    adminOverheadRun: "-",
-    analysisDesignInitial: "",
-  });
-
-  const handleChange = (field, value) => {
-    setCosts((prevCosts) => ({
-      ...prevCosts,
-      [field]: value,
-      [`${field.replace("Initial", "Run")}`]: value
-        ? (parseFloat(value) * 0.2).toFixed(2)
-        : "-",
-    }));
-  };
-
-  const totalInitial = Object.keys(costs)
-    .filter((key) => key.endsWith("Initial"))
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0);
-  const totalRun = Object.keys(costs)
-    .filter((key) => key.endsWith("Run") && costs[key] !== "-")
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0)
-    .toFixed(2);
-  const totalCostOfOwnership = (totalInitial + totalRun * 3).toFixed(2);
-
+const CostDetails = ({ costs, handleChange }) => {
   return (
-     <TableContainer component={Paper}>
+    <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
@@ -269,20 +222,6 @@ const CostDetails = ({ estimatorConfig }) => {
               €
             </TableCell>
             <TableCell>-</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Initial costs</TableCell>
-            <TableCell>{totalInitial} €</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Run costs (per year)</TableCell>
-            <TableCell></TableCell>
-            <TableCell>{totalRun} €</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Total cost of ownership (3 years)</TableCell>
-            <TableCell colSpan={2}>{totalCostOfOwnership} €</TableCell>
           </TableRow>
         </TableBody>
       </Table>

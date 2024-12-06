@@ -12,7 +12,7 @@ import runEngine from "../utils/runEngine";
 
 const GeneratedEstimator = ({ estimatorConfig }) => {
   const [inputParameters, setInputParameters] = useState(
-    estimatorConfig.parameters
+    estimatorConfig.parameters,
   );
 
   const handleChange = (event) => {
