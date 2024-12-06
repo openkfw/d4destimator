@@ -14,7 +14,7 @@ export default function runEngine(config: any) {
 
     calculatedConfig.costs[costkey].value = 0; //reset (just in case there was a default value)
     parameterKeys.map((param: any) => {
-      console.log("Checking parameter", param);
+      //console.log("Checking parameter", param);
       const selectedParameter = config.parameters[param].values.filter(
         (x: any) => x.selected
       )[0]; //I hope that only one parameter is set to true!

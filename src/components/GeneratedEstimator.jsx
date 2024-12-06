@@ -7,35 +7,29 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import runEngine from "../utils/runEngine";
 
 const GeneratedEstimator = ({ estimatorConfig, setCalculation }) => {
   const parameters = estimatorConfig.parameters;
   console.log("Rendering input parameters", parameters);
   const handleChange = (key, value) => {
-    console.log("Changing input", key, value);
+    console.log("Changing input", key, value); //e.g. users, 50+
 
     //for that field, set all selected options to false and toggle the selected to true
     const newEstimatorConfig = { ...estimatorConfig };
 
     newEstimatorConfig.parameters[key].values.map((v) => {
+      console.log("Changing this field", v);
       v.selected = false;
-      console.log(
-        "v",
-        v,
-        newEstimatorConfig.parameters[key].values.filter(
-          (f) => f.inputFactor == v.inputFactor
-        )[0].selected
-      );
-      if (v.inputFactor == value && key == newEstimatorConfig.parameters[key]) {
-        console.log("Found match");
-        /*newEstimatorConfig.parameters[key].values.filter(
-          (f) => f.inputFactor == v.inputFactor
-        )[0].selected = true;*/
+      if (v.inputFactor == value) {
+        console.log("Found match", v);
+        v.selected = true;
       }
     });
 
     console.log("Updated estimator config", newEstimatorConfig);
-    //setCalculation(newEstimatorConfig);
+
+    setCalculation(runEngine(newEstimatorConfig));
   };
 
   return (

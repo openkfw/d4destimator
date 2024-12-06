@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 
 const CostDetails = ({ config, handleChange }) => {
+  console.log("Received a new engine result", config);
+
   return (
     <div>
       <TableContainer component={Paper}>
