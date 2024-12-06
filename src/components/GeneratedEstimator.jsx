@@ -8,11 +8,9 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-import runEngine from "../utils/runEngine";
-
 const GeneratedEstimator = ({ estimatorConfig }) => {
   const [inputParameters, setInputParameters] = useState(
-    estimatorConfig.parameters,
+    estimatorConfig.parameters
   );
 
   const handleChange = (event) => {
@@ -21,8 +19,8 @@ const GeneratedEstimator = ({ estimatorConfig }) => {
 
   const dropdownItems = ["Placeholder 1", "Placeholder 2", "Placeholder 3"];
   return (
-    <Box sx={{ padding: 2 }}>
-      <Typography variant="h4" gutterBottom>
+    <div>
+      <Typography variant="h5" gutterBottom>
         {estimatorConfig.flavour}
       </Typography>
       {inputParameters.users.values.map((value, index) => (
@@ -43,7 +41,7 @@ const GeneratedEstimator = ({ estimatorConfig }) => {
           </Select>
         </FormControl>
       ))}
-    </Box>
+    </div>
   );
 };
 
