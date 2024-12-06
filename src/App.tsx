@@ -32,7 +32,8 @@ function App() {
       <Box
         sx={{
           minHeight: "100vh",
-          background: "linear-gradient(to bottom right, #6a11cb, #2575fc)",
+          background:
+            " linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,48,5,1) 35%, rgba(19,4,136,1) 100%)",
           color: "white",
           display: "flex",
           flexDirection: "column",
@@ -67,7 +68,10 @@ function App() {
                 }}
               >
                 <div>
-                  <GeneratedEstimator estimatorConfig={calculation} />
+                  <GeneratedEstimator
+                    estimatorConfig={calculation}
+                    setCalculation={setCalculation}
+                  />
                 </div>
               </Paper>
             </Grid>
