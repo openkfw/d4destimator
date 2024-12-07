@@ -30,16 +30,12 @@ const CostDetails = ({ config, handleChange }) => {
               <TableRow key={key}>
                 <TableCell>{config.costs[key].label}</TableCell>
                 <TableCell>
-                  <TextField
-                    type="text"
-                    value={config.costs[`${key}Initial`]}
-                    onChange={(e) =>
-                      handleChange(`${key}Initial`, e.target.value)
-                    }
-                    variant="outlined"
-                    size="small"
-                  />{" "}
-                  €
+                  <Typography variant="body">
+                    {new Intl.NumberFormat("de-DE", {
+                      style: "currency",
+                      currency: config.constants.dailyrate.currency,
+                    }).format(config.costs[key].value)}
+                  </Typography>
                 </TableCell>
                 <TableCell>{config.costs[`${key}Run`] || "-"} €</TableCell>
               </TableRow>
