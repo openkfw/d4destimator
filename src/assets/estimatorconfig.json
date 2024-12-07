@@ -72,6 +72,111 @@
           "training": "10"
         }
       ]
+    },
+    "organisationalComplexity": {
+      "label": "Organisational complexity",
+      "values": [
+        {
+          "inputFactor": "0",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "1-3",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "3+",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
+    },
+    "infrastructureLocation": {
+      "label": "Infrastructure location",
+      "values": [
+        {
+          "inputFactor": "0",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "1-3",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "3+",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
+    },
+    "cybersecurity": {
+      "label": "Cybersecurity criticality",
+      "values": [
+        {
+          "inputFactor": "0",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "1-3",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "3+",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
     }
   },
   "costs": {
