@@ -59,7 +59,7 @@ function App() {
             }}
           >
             {/* Left Side */}
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Paper
                 elevation={3}
                 sx={{
@@ -78,13 +78,13 @@ function App() {
             </Grid>
 
             {/* Right Side */}
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={8}>
               <Paper
                 elevation={3}
                 sx={{
                   p: 3,
                   borderRadius: 2,
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  backgroundColor: "rgba(255, 255, 255, 0.)",
                 }}
               >
                 <div>

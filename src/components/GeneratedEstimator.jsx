@@ -34,8 +34,8 @@ const GeneratedEstimator = ({ estimatorConfig, setCalculation }) => {
 
   return (
     <div>
-      <Typography variant="h5" gutterBottom>
-        {estimatorConfig.flavour}
+      <Typography variant="h6" gutterBottom>
+        {estimatorConfig.flavour} parameters
       </Typography>
       <div>
         {Object.entries(parameters).map(([field, data]) => (

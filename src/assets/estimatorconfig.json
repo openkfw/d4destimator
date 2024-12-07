@@ -1,5 +1,5 @@
 {
-  "flavour": "IT system estimator",
+  "flavour": "IT system",
   "author": "jzakotnik",
   "version": "0.1",
   "parameters": {
@@ -209,6 +209,7 @@
     "adminOverhead": { "label": "Management overhead", "value": "0" }
   },
   "constants": {
-    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" }
+    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },
+    "runcosts": { "unit": "Percentage", "value": "0.2" }
   }
 }

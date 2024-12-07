@@ -16,13 +16,19 @@ const CostDetails = ({ config, handleChange }) => {
 
   return (
     <div>
-      <TableContainer component={Paper}>
+      <TableContainer>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Components</TableCell>
-              <TableCell>Initial cost</TableCell>
-              <TableCell>Run Cost per year</TableCell>
+              <TableCell>
+                <Typography>Components</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography>Initial cost</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography>Run Cost per year</Typography>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -37,7 +43,15 @@ const CostDetails = ({ config, handleChange }) => {
                     }).format(config.costs[key].value)}
                   </Typography>
                 </TableCell>
-                <TableCell>{config.costs[`${key}Run`] || "-"} €</TableCell>
+                <TableCell>
+                  {" "}
+                  {new Intl.NumberFormat("de-DE", {
+                    style: "currency",
+                    currency: config.constants.dailyrate.currency,
+                  }).format(
+                    config.costs[key].value * config.constants.runcosts.value
+                  )}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
