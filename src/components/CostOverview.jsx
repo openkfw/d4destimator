@@ -5,6 +5,13 @@ import CostDetails from "./CostDetails";
 
 const calculateTotals = (config) => {
   const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
+  Object.values(config.costs).map((k, v) => {
+    //console.log("k,v", k, v);
+    totals.totalChange += v.costs;
+  });
+  totals.totalRun = totals.totalChange * config.constants.runcosts.value;
+  totals.totalTCO =
+    totals.totalChange + totals.totalRun * config.constants.tcoduration.value;
   return totals;
 };
 

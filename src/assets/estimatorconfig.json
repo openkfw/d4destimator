@@ -210,6 +210,7 @@
   },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },
-    "runcosts": { "unit": "Percentage", "value": "0.2" }
+    "runcosts": { "unit": "Percentage", "value": "0.2" },
+    "tcoduration": { "unit": "Year", "value": "3" }
   }
 }
