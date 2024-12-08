@@ -88,7 +88,7 @@ function App() {
                 }}
               >
                 <div>
-                  <CostDetails config={calculation} handleChange={null} />
+                  <CostOverview config={calculation} />
                 </div>
               </Paper>
             </Grid>

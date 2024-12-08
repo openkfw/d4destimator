@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const CostDetails = ({ config, handleChange }) => {
+const CostDetails = ({ config }) => {
   console.log("Received a new engine result", config);
 
   return (
