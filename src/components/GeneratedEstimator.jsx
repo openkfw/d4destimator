@@ -7,43 +7,59 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-
 import runEngine from "../utils/runEngine";
 
-const GeneratedEstimator = ({ estimatorConfig }) => {
-  const [inputParameters, setInputParameters] = useState(
-    estimatorConfig.parameters,
-  );
+const GeneratedEstimator = ({ estimatorConfig, setCalculation }) => {
+  const parameters = estimatorConfig.parameters;
+  console.log("Rendering input parameters", parameters);
+  const handleChange = (key, value) => {
+    console.log("Changing input", key, value); //e.g. users, 50+
 
-  const handleChange = (event) => {
-    //testing engine
+    //for that field, set all selected options to false and toggle the selected to true
+    const newEstimatorConfig = { ...estimatorConfig };
+
+    newEstimatorConfig.parameters[key].values.map((v) => {
+      console.log("Changing this field", v);
+      v.selected = false;
+      if (v.inputFactor == value) {
+        console.log("Found match", v);
+        v.selected = true;
+      }
+    });
+
+    console.log("Updated estimator config", newEstimatorConfig);
+
+    setCalculation(runEngine(newEstimatorConfig));
   };
 
-  const dropdownItems = ["Placeholder 1", "Placeholder 2", "Placeholder 3"];
   return (
-    <Box sx={{ padding: 2 }}>
-      <Typography variant="h4" gutterBottom>
-        {estimatorConfig.flavour}
+    <div>
+      <Typography variant="h6" gutterBottom>
+        {estimatorConfig.flavour} parameters
       </Typography>
-      {inputParameters.users.values.map((value, index) => (
-        <FormControl key={index} style={{ margin: "10px", minWidth: 200 }}>
-          <InputLabel id={`dropdown-label-${index}`}>
-            Select Input Factor
-          </InputLabel>
-          <Select
-            labelId={`dropdown-label-${index}`}
-            value={"placeholder"}
-            onChange={handleChange(index)}
-          >
-            {inputParameters.users.values.map((option, optionIndex) => (
-              <MenuItem key={optionIndex} value={option.inputFactor}>
-                {option.inputFactor}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      ))}
-    </Box>
+      <div>
+        {Object.entries(parameters).map(([field, data]) => (
+          <FormControl key={field} fullWidth style={{ marginBottom: "16px" }}>
+            <InputLabel id="demo-simple-select-standard-label">
+              {data.label}
+            </InputLabel>
+            <Select
+              sx={{ fontPalette: "black" }}
+              labelId={`${field}-label`}
+              label={data.label}
+              value={data.values.filter((d) => d.selected)[0].inputFactor}
+              onChange={(e) => handleChange(field, e.target.value)}
+            >
+              {data.values.map((option, index) => (
+                <MenuItem key={index} value={option.inputFactor}>
+                  {option.inputFactor}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        ))}
+      </div>
+    </div>
   );
 };
 

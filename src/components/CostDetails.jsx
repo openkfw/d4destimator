@@ -8,41 +8,56 @@ import {
   TableRow,
   Paper,
   TextField,
+  Typography,
 } from "@mui/material";
 
-const CostDetails = ({ config, handleChange }) => {
+const CostDetails = ({ config }) => {
+  console.log("Received a new engine result", config);
+
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Components</TableCell>
-            <TableCell>Initial cost</TableCell>
-            <TableCell>Run Cost per year</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {Object.keys(config.costs).map((key) => (
-            <TableRow key={key}>
-              <TableCell>{config.costs[key].label}</TableCell>
+    <div>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
               <TableCell>
-                <TextField
-                  type="text"
-                  value={config.costs[`${key}Initial`]}
-                  onChange={(e) =>
-                    handleChange(`${key}Initial`, e.target.value)
-                  }
-                  variant="outlined"
-                  size="small"
-                />{" "}
-                €
+                <Typography>Components</Typography>
               </TableCell>
-              <TableCell>{config.costs[`${key}Run`] || "-"} €</TableCell>
+              <TableCell>
+                <Typography>Initial cost</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography>Run Cost per year</Typography>
+              </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {Object.keys(config.costs).map((key) => (
+              <TableRow key={key}>
+                <TableCell>{config.costs[key].label}</TableCell>
+                <TableCell>
+                  <Typography variant="body">
+                    {new Intl.NumberFormat("de-DE", {
+                      style: "currency",
+                      currency: config.constants.dailyrate.currency,
+                    }).format(config.costs[key].value)}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  {" "}
+                  {new Intl.NumberFormat("de-DE", {
+                    style: "currency",
+                    currency: config.constants.dailyrate.currency,
+                  }).format(
+                    config.costs[key].value * config.constants.runcosts.value
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 

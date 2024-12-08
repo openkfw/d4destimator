@@ -3,60 +3,28 @@ import React, { useState } from "react";
 import CostSummary from "./CostSummary";
 import CostDetails from "./CostDetails";
 
-const CostOverview = ({ estimatorConfig }) => {
-  const [costs, setCosts] = useState({
-    hardwareInitial: "",
-    hardwareRun: "-",
-    procurementInitial: "",
-    procurementRun: "-",
-    infrastructureInitial: "",
-    infrastructureRun: "-",
-    integrationInitial: "",
-    integrationRun: "-",
-    securityInitial: "",
-    securityRun: "-",
-    monitoringInitial: "",
-    monitoringRun: "-",
-    documentationInitial: "",
-    documentationRun: "-",
-    changeManagementInitial: "",
-    changeManagementRun: "-",
-    adminTrainingInitial: "",
-    adminTrainingRun: "-",
-    userTrainingInitial: "",
-    userTrainingRun: "-",
-    adminOverheadInitial: "",
-    adminOverheadRun: "-",
-    analysisDesignInitial: "",
+const calculateTotals = (config) => {
+  const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
+  Object.values(config.costs).map((k, v) => {
+    //console.log("k,v", k, v);
+    totals.totalChange += v.costs;
   });
+  totals.totalRun = totals.totalChange * config.constants.runcosts.value;
+  totals.totalTCO =
+    totals.totalChange + totals.totalRun * config.constants.tcoduration.value;
+  return totals;
+};
 
-  const handleChange = (field, value) => {
-    setCosts((prevCosts) => ({
-      ...prevCosts,
-      [field]: value,
-      [`${field.replace("Initial", "Run")}`]: value
-        ? (parseFloat(value) * 0.2).toFixed(2)
-        : "-",
-    }));
-  };
-
-  const totalInitial = Object.keys(costs)
-    .filter((key) => key.endsWith("Initial"))
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0);
-  const totalRun = Object.keys(costs)
-    .filter((key) => key.endsWith("Run") && costs[key] !== "-")
-    .reduce((acc, key) => acc + (parseFloat(costs[key]) || 0), 0)
-    .toFixed(2);
-  const totalCostOfOwnership = (totalInitial + totalRun * 3).toFixed(2);
-
+const CostOverview = ({ config }) => {
+  const totals = calculateTotals(config);
   return (
     <div>
       <CostSummary
-        totalInitial={totalInitial}
-        totalRun={totalRun}
-        totalCostOfOwnership={totalCostOfOwnership}
+        totalInitial={totals.totalChange}
+        totalRun={totals.totalRun}
+        totalCostOfOwnership={totals.totalTCO}
       />
-      <CostDetails costs={costs} handleChange={handleChange} />
+      <CostDetails config={config} />
     </div>
   );
 };

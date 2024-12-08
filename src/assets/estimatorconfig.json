@@ -1,5 +1,5 @@
 {
-  "flavour": "IT system estimator",
+  "flavour": "IT system",
   "author": "jzakotnik",
   "version": "0.1",
   "parameters": {
@@ -17,7 +17,7 @@
           "training": "3"
         },
         {
-          "inputFactor": "10-50",
+          "inputFactor": "10-100",
           "selected": true,
           "hardware": "15",
           "procurement": "0",
@@ -27,7 +27,7 @@
           "training": "10"
         },
         {
-          "inputFactor": "50+",
+          "inputFactor": "100+",
           "selected": false,
           "hardware": "10",
           "procurement": "0",
@@ -72,9 +72,118 @@
           "training": "10"
         }
       ]
+    },
+    "organisationalComplexity": {
+      "label": "Organisational complexity",
+      "values": [
+        {
+          "inputFactor": "low",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "medium",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "high",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
+    },
+    "infrastructureLocation": {
+      "label": "Infrastructure location",
+      "values": [
+        {
+          "inputFactor": "own datacenter",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "remote hosting",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "cloud",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
+    },
+    "cybersecurity": {
+      "label": "Cybersecurity criticality",
+      "values": [
+        {
+          "inputFactor": "low",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "1",
+          "training": "3"
+        },
+        {
+          "inputFactor": "medium",
+          "selected": true,
+          "hardware": "15",
+          "procurement": "0",
+          "infrastructureConfiguration": "0",
+          "integrationSystems": "0",
+          "securitySetup": "5",
+          "training": "5"
+        },
+        {
+          "inputFactor": "high",
+          "selected": false,
+          "hardware": "10",
+          "procurement": "0",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "0",
+          "securitySetup": "10",
+          "training": "10"
+        }
+      ]
     }
   },
   "costs": {
+    "initialAnalysisDesign": {
+      "label": "Initial analyse and project setup",
+      "value": "0"
+    },
     "hardware": { "label": "Hardware", "value": "0.20" },
     "procurement": { "label": "Procurement process", "value": "0.60" },
     "infrastructureConfiguration": {
@@ -97,13 +206,11 @@
     },
     "adminTraining": { "label": "Administrator training", "value": "0" },
     "userTraining": { "label": "User training", "value": "0" },
-    "adminOverhead": { "label": "Admin overhead", "value": "0" },
-    "initialAnalysisDesign": {
-      "label": "Initial analyse and design",
-      "value": "0"
-    }
+    "adminOverhead": { "label": "Management overhead", "value": "0" }
   },
   "constants": {
-    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" }
+    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },
+    "runcosts": { "unit": "Percentage", "value": "0.2" },
+    "tcoduration": { "unit": "Year", "value": "3" }
   }
 }
