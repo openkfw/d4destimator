@@ -6,16 +6,20 @@ const CostSummary = ({ totalInitial, totalRun, totalCostOfOwnership }) => {
   return (
     <Box p={2} component={Paper}>
       <Grid container spacing={2} direction="row" alignItems="flex-start">
-        <Grid size={6}>Total Initial Cost:</Grid>
+        <Grid size={6}>
+          <Typography align="left">Total Initial Cost:</Typography>
+        </Grid>
         <Grid size={6}>{totalInitial} €</Grid>
       </Grid>
       <Grid container item spacing={2} direction="row" alignItems="flex-start">
-        <Grid size={6}>Total Run Cost per Year:</Grid>
+        <Grid size={6}>
+          <Typography align="left">Total Run Cost per Year:</Typography>
+        </Grid>
         <Grid size={6}>{totalRun} €</Grid>
       </Grid>
       <Grid container item spacing={2} direction="row" alignItems="flex-start">
         <Grid size={6}>
-          <Typography sx={{ fontWeight: "bold" }}>
+          <Typography align="left" sx={{ fontWeight: "bold" }}>
             Total Cost of Ownership (3 years):
           </Typography>
         </Grid>

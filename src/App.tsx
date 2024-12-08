@@ -87,9 +87,7 @@ function App() {
                   backgroundColor: "rgba(255, 255, 255, 0.)",
                 }}
               >
-                <div>
-                  <CostOverview config={calculation} />
-                </div>
+                <CostOverview config={calculation} />
               </Paper>
             </Grid>
           </Grid>
