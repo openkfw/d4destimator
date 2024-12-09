@@ -11,7 +11,7 @@ export default function runEngine(config: any) {
   //lets iterate through all cost fields and add up effort where needed
   const calcResult = costKeys.map((costkey: any) => {
     //for that costkey, check all parameter fields if there are effort. But only for the selected ones.
-
+    //console.log("Engine, checking cost key: ", costkey);
     calculatedConfig.costs[costkey].value = 0; //reset (just in case there was a default value)
     parameterKeys.map((param: any) => {
       //console.log("Checking parameter", param);
@@ -27,14 +27,16 @@ export default function runEngine(config: any) {
           ([key, _]) => key !== "inputFactor" && key !== "selected"
         )
       );
-      /*console.log(
-        "Adding some efforts",
-        calculatedConfig.costs[costkey].value,
-        filteredValues[costkey]
-      );*/
+      //console.log("Filtered values for the cost calculation", filteredValues);
       calculatedConfig.costs[costkey].value +=
         parseInt(filteredValues[costkey] as string) *
         calculatedConfig.constants.dailyrate.value;
+      /*console.log(
+        "Adding some efforts",
+        costkey,
+        calculatedConfig.costs[costkey].value,
+        filteredValues[costkey]
+      );*/
     });
   });
 

@@ -6,8 +6,8 @@ import CostDetails from "./CostDetails";
 const calculateTotals = (config) => {
   const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
   Object.values(config.costs).map((k, v) => {
-    //console.log("k,v", k, v);
-    totals.totalChange += v.costs;
+    console.log("k,v", k, v);
+    totals.totalChange += k.value;
   });
   totals.totalRun = totals.totalChange * config.constants.runcosts.value;
   totals.totalTCO =

@@ -9,32 +9,50 @@
         {
           "inputFactor": "<10",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "3"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "10-100",
           "selected": true,
-          "hardware": "15",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "5",
-          "training": "10"
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
+          "hardware": "10",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "100+",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "30"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         }
       ]
     },
@@ -44,32 +62,50 @@
         {
           "inputFactor": "0",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "3"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "1-3",
           "selected": true,
-          "hardware": "15",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "5",
-          "training": "5"
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
+          "hardware": "10",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "3+",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
           "infrastructureConfiguration": "10",
-          "integrationSystems": "0",
+          "integrationSystems": "10",
           "securitySetup": "10",
-          "training": "10"
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         }
       ]
     },
@@ -79,32 +115,50 @@
         {
           "inputFactor": "low",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "3"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "medium",
           "selected": true,
-          "hardware": "15",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "5",
-          "training": "5"
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
+          "hardware": "10",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "high",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
           "infrastructureConfiguration": "10",
-          "integrationSystems": "0",
+          "integrationSystems": "10",
           "securitySetup": "10",
-          "training": "10"
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         }
       ]
     },
@@ -114,32 +168,50 @@
         {
           "inputFactor": "own datacenter",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "3"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "remote hosting",
           "selected": true,
-          "hardware": "15",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "5",
-          "training": "5"
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
+          "hardware": "10",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "cloud",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
           "infrastructureConfiguration": "10",
-          "integrationSystems": "0",
+          "integrationSystems": "10",
           "securitySetup": "10",
-          "training": "10"
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         }
       ]
     },
@@ -149,40 +221,58 @@
         {
           "inputFactor": "low",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "1",
-          "training": "3"
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "medium",
           "selected": true,
-          "hardware": "15",
-          "procurement": "0",
-          "infrastructureConfiguration": "0",
-          "integrationSystems": "0",
-          "securitySetup": "5",
-          "training": "5"
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
+          "hardware": "10",
+          "infrastructureConfiguration": "10",
+          "integrationSystems": "10",
+          "securitySetup": "10",
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         },
         {
           "inputFactor": "high",
           "selected": false,
+          "initialAnalysisDesign": "4",
+          "procurement": "2",
           "hardware": "10",
-          "procurement": "0",
           "infrastructureConfiguration": "10",
-          "integrationSystems": "0",
+          "integrationSystems": "10",
           "securitySetup": "10",
-          "training": "10"
+          "monitoringSetup": "10",
+          "documentationAdaptation": "10",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "10",
+          "adminOverhead": "10"
         }
       ]
     }
   },
   "costs": {
     "initialAnalysisDesign": {
-      "label": "Initial analyse and project setup",
-      "value": "0"
+      "label": "Initial analysis and project setup",
+      "value": "1"
     },
     "hardware": { "label": "Hardware", "value": "0.20" },
     "procurement": { "label": "Procurement process", "value": "0.60" },
@@ -198,15 +288,15 @@
     "monitoringSetup": { "label": "Monitoring setup", "value": "0" },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
-      "value": "0"
+      "value": "3"
     },
     "changeManagement": {
       "label": "Change Management business processes",
-      "value": "0"
+      "value": "2"
     },
-    "adminTraining": { "label": "Administrator training", "value": "0" },
-    "userTraining": { "label": "User training", "value": "0" },
-    "adminOverhead": { "label": "Management overhead", "value": "0" }
+    "adminTraining": { "label": "Administrator training", "value": "1" },
+    "userTraining": { "label": "User training", "value": "1" },
+    "adminOverhead": { "label": "Management overhead", "value": "3" }
   },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },
