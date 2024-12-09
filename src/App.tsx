@@ -18,7 +18,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-
+import GitHubIcon from '@mui/icons-material/GitHub';
 function App() {
   const [calculation, setCalculation] = useState(estimatorConfig);
   useEffect(() => {
@@ -46,6 +46,10 @@ function App() {
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
               D4D Cost Estimator for digital systems
             </Typography>
+            <a href="https://github.com/openkfw/d4destimator" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+    <GitHubIcon sx={{ marginRight: 1 }} />
+    What's behind it ?
+  </a>
           </Toolbar>
         </AppBar>
 
