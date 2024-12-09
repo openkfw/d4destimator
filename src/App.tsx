@@ -19,6 +19,8 @@ import {
   Typography,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import GeneratedConstants from "./components/GeneratedConstants";
+
 function App() {
   const [calculation, setCalculation] = useState(estimatorConfig);
   useEffect(() => {
@@ -84,6 +86,22 @@ function App() {
               >
                 <div>
                   <GeneratedEstimator
+                    estimatorConfig={calculation}
+                    setCalculation={setCalculation}
+                  />
+                </div>
+              </Paper>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  my: 2,
+                  borderRadius: 2,
+                  backgroundColor: "rgba(255, 255, 255, 1.0)",
+                }}
+              >
+                <div>
+                  <GeneratedConstants
                     estimatorConfig={calculation}
                     setCalculation={setCalculation}
                   />
