@@ -107,7 +107,7 @@ function App() {
           }}
         >
           <Typography variant="body2" color="white">
-            © 2024 KfW. All rights reserved.
+            Enjoy the ride.
           </Typography>
         </Box>
       </Box>
