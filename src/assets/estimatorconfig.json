@@ -272,31 +272,64 @@
   "costs": {
     "initialAnalysisDesign": {
       "label": "Initial analysis and project setup",
-      "value": "1"
+      "value": "1",
+      "category": "Initial"
     },
-    "hardware": { "label": "Hardware", "value": "0.20" },
-    "procurement": { "label": "Procurement process", "value": "0.60" },
+    "hardware": {
+      "label": "Hardware",
+      "value": "0.20",
+      "category": "Hard- and Software costs"
+    },
+    "procurement": {
+      "label": "Procurement process",
+      "value": "0.60",
+      "category": "IT related staffing costs"
+    },
     "infrastructureConfiguration": {
       "label": "Infrastructure configuration",
-      "value": "0.80"
+      "value": "0.80",
+      "category": "IT related staffing costs"
     },
     "integrationSystems": {
       "label": "Integration of other systems via API",
-      "value": "1.00"
+      "value": "1.00",
+      "category": "IT related staffing costs"
     },
-    "securitySetup": { "label": "Security setup", "value": "0" },
-    "monitoringSetup": { "label": "Monitoring setup", "value": "0" },
+    "securitySetup": {
+      "label": "Security setup",
+      "value": "0",
+      "category": "Staffing costs"
+    },
+    "monitoringSetup": {
+      "label": "Monitoring setup",
+      "value": "0",
+      "category": "Staffing costs"
+    },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
-      "value": "3"
+      "value": "3",
+      "category": "Staffing costs"
     },
     "changeManagement": {
       "label": "Change Management business processes",
-      "value": "2"
+      "value": "2",
+      "category": "Staffing costs"
     },
-    "adminTraining": { "label": "Administrator training", "value": "1" },
-    "userTraining": { "label": "User training", "value": "1" },
-    "adminOverhead": { "label": "Management overhead", "value": "3" }
+    "adminTraining": {
+      "label": "Administrator training",
+      "value": "1",
+      "category": "Staffing costs"
+    },
+    "userTraining": {
+      "label": "User training",
+      "value": "1",
+      "category": "Staffing costs"
+    },
+    "adminOverhead": {
+      "label": "Management overhead",
+      "value": "3",
+      "category": "Staffing costs"
+    }
   },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },

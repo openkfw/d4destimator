@@ -49,7 +49,7 @@ const CostDetails = ({ config }) => {
                     style: "currency",
                     currency: config.constants.dailyrate.currency,
                   }).format(
-                    config.costs[key].value * config.constants.runcosts.value
+                    config.costs[key].value * config.constants.runcosts.value,
                   )}
                 </TableCell>
               </TableRow>

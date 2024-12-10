@@ -16,7 +16,7 @@ export default function runEngine(config: any) {
     parameterKeys.map((param: any) => {
       //console.log("Checking parameter", param);
       const selectedParameter = config.parameters[param].values.filter(
-        (x: any) => x.selected
+        (x: any) => x.selected,
       )[0]; //I hope that only one parameter is set to true!
 
       //console.log("Selected parameter", selectedParameter);
@@ -24,8 +24,8 @@ export default function runEngine(config: any) {
       //for the calculation runner, we don't need the flag if it's selected and what the inputFactor was
       const filteredValues = Object.fromEntries(
         Object.entries(selectedParameter).filter(
-          ([key, _]) => key !== "inputFactor" && key !== "selected"
-        )
+          ([key, _]) => key !== "inputFactor" && key !== "selected",
+        ),
       );
       //console.log("Filtered values for the cost calculation", filteredValues);
       calculatedConfig.costs[costkey].value +=
