@@ -17,10 +17,10 @@ const GeneratedEstimator = ({ estimatorConfig, setCalculation }:{estimatorConfig
     //for that field, set all selected options to false and toggle the selected to true
     const newEstimatorConfig = { ...estimatorConfig };
 
-    newEstimatorConfig.parameters[key].values.map((v:any) => {
+    newEstimatorConfig.parameters[key].values.forEach((v:any) => {
       console.log("Changing this field", v);
       v.selected = false;
-      if (v.inputFactor == value) {
+      if (v.inputFactor === value) {
         console.log("Found match", v);
         v.selected = true;
       }

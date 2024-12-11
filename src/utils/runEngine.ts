@@ -8,11 +8,11 @@ export default function runEngine(config: any) {
   console.log("Using this config for the calculation", config);
 
   //lets iterate through all cost fields and add up effort where needed
-  costKeys.map((costkey: any) => {
+  costKeys.forEach((costkey: any) => {
     //for that costkey, check all parameter fields if there are effort. But only for the selected ones.
     //console.log("Engine, checking cost key: ", costkey);
     calculatedConfig.costs[costkey].value = 0; //reset (just in case there was a default value)
-    parameterKeys.map((param: any) => {
+    parameterKeys.forEach((param: any) => {
       //console.log("Checking parameter", param);
       const selectedParameter = config.parameters[param].values.filter(
         (x: any) => x.selected,
