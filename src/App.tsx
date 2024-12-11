@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -24,7 +24,7 @@ import GeneratedConstants from "./components/GeneratedConstants";
 function App() {
   const [calculation, setCalculation] = useState(estimatorConfig);
   useEffect(() => {
-    const result = runEngine(estimatorConfig) as any;
+    const result = runEngine(estimatorConfig);
     setCalculation(result);
 
     console.log("Running engine:", result);
@@ -60,7 +60,7 @@ function App() {
               }}
             >
               <GitHubIcon sx={{ marginRight: 1 }} />
-              What's behind it ?
+              What&apos;s behind it ?
             </a>
           </Toolbar>
         </AppBar>
