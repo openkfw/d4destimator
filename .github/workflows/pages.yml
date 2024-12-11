@@ -13,9 +13,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Set CI to false
-      run: echo "CI=false" >> $GITHUB_ENV
-      
+          
     - name: Build and Deploy React app to GitHub Pages
       uses: omkartapale/react-deployment-gh-pages@v1.0.0

@@ -300,8 +300,11 @@
       "value": "0",
       "category": "Staffing costs"
     },
-    "monitoringSetup": { "label": "Monitoring setup", "value": "0",
-      "category": "Staffing costs" },
+    "monitoringSetup": {
+      "label": "Monitoring setup",
+      "value": "0",
+      "category": "Staffing costs"
+    },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
       "value": "3",
@@ -312,12 +315,21 @@
       "value": "2",
       "category": "Staffing costs"
     },
-    "adminTraining": { "label": "Administrator training", "value": "1",
-      "category": "Staffing costs" },
-    "userTraining": { "label": "User training", "value": "1",
-      "category": "Staffing costs" },
-    "adminOverhead": { "label": "Management overhead", "value": "3",
-      "category": "Staffing costs" }
+    "adminTraining": {
+      "label": "Administrator training",
+      "value": "1",
+      "category": "Staffing costs"
+    },
+    "userTraining": {
+      "label": "User training",
+      "value": "1",
+      "category": "Staffing costs"
+    },
+    "adminOverhead": {
+      "label": "Management overhead",
+      "value": "3",
+      "category": "Staffing costs"
+    }
   },
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": "1000" },

@@ -1,6 +1,6 @@
 # Disclaimer
 
-This estimator is work in progress. In particular the estimates might not be realistic yet, because the underlying framework is being developed and tested. Handle at your own risk. 
+This estimator is work in progress. In particular the estimates might not be realistic yet, because the underlying framework is being developed and tested. Handle at your own risk.
 
 # D4D Estimator for digital projects
 
