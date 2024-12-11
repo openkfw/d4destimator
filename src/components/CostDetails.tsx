@@ -15,15 +15,14 @@ interface Cost {
   category: string;
 }
 
-
 const CostDetails = ({ config }: { config: any }) => {
   console.log("Received a new engine result", config);
 
   if (!config.costs) {
     throw new Error("Invalid costs object");
   }
-  const categories : { [key: string]: Cost[] } = {};
-  Object.values(config.costs).forEach((cost:any) => {
+  const categories: { [key: string]: Cost[] } = {};
+  Object.values(config.costs).forEach((cost: any) => {
     if (!categories[cost.category]) {
       categories[cost.category] = [];
     }
@@ -67,15 +66,14 @@ const CostDetails = ({ config }: { config: any }) => {
                           currency: config.constants.dailyrate.currency,
                         }).format(cost.value)}
                       </Typography>
-                    </TableCell><TableCell>
-                  {" "}
-                  {new Intl.NumberFormat("de-DE", {
-                    style: "currency",
-                    currency: config.constants.dailyrate.currency,
-                  }).format(
-                    cost.value * config.constants.runcosts.value,
-                  )}
-                </TableCell>
+                    </TableCell>
+                    <TableCell>
+                      {" "}
+                      {new Intl.NumberFormat("de-DE", {
+                        style: "currency",
+                        currency: config.constants.dailyrate.currency,
+                      }).format(cost.value * config.constants.runcosts.value)}
+                    </TableCell>
                   </TableRow>
                 ))}
               </React.Fragment>

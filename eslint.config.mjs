@@ -11,6 +11,11 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
+    settings: {
+      react: {
+        version: "18.3", // Spezifizieren Sie hier die React-Version
+      },
+    },
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
     },

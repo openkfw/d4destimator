@@ -1,14 +1,9 @@
 import {
-  Box,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
   Typography,
 } from "@mui/material";
 
 import Slider from "@mui/material/Slider";
-import { useState } from "react";
+import React from "react";
 import runEngine from "../utils/runEngine";
 
 const GeneratedConstants = ({ estimatorConfig, setCalculation }: any) => {
