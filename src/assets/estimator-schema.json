@@ -139,5 +139,12 @@
       "required": ["dailyrate", "runcosts", "tcoduration"]
     }
   },
-  "required": ["flavour", "author", "version", "parameters", "costs", "constants"]
+  "required": [
+    "flavour",
+    "author",
+    "version",
+    "parameters",
+    "costs",
+    "constants"
+  ]
 }

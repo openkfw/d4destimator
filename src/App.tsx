@@ -8,6 +8,7 @@ import GeneratedEstimator from "./components/GeneratedEstimator";
 import runEngine from "./utils/runEngine";
 
 import estimatorConfig from "./assets/estimatorconfig.json";
+import { EstimatorConfig } from "./types/estimatorConfigType";
 
 import {
   AppBar,
@@ -21,10 +22,12 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GeneratedConstants from "./components/GeneratedConstants";
 
+const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
+
 function App() {
-  const [calculation, setCalculation] = useState(estimatorConfig);
+  const [calculation, setCalculation] = useState(estimatorConfigTyped);
   useEffect(() => {
-    const result = runEngine(estimatorConfig);
+    const result = runEngine(estimatorConfigTyped);
     setCalculation(result);
 
     console.log("Running engine:", result);
