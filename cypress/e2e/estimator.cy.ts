@@ -1,6 +1,5 @@
 import estimatorConfig from "../../src/assets/estimatorconfig.json";
 
-
 import { EstimatorConfig } from "../../src/types/estimatorConfigType";
 
 const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
