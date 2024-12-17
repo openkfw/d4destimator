@@ -1,5 +1,5 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe("Make sure that the cypress works", () => {
+  it("Does not do much!", () => {
+    expect(true).to.equal(true);
+  });
+});

@@ -1,6 +1,4 @@
-import {
-  Typography,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 
 import Slider from "@mui/material/Slider";
 import React from "react";

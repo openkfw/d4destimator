@@ -27,7 +27,7 @@ const CostSummary = ({
 
   return (
     <Box p={2} component={Paper}>
-      <Grid  spacing={2} direction="row" alignItems="flex-start">
+      <Grid spacing={2} direction="row" alignItems="flex-start">
         <Grid size={6}>
           <Typography align="left">Total Initial Cost:</Typography>
         </Grid>

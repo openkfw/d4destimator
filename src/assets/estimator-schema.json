@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$title": "EstimatorConfig",
+  "description": "Estimator configuration schema",
+  "type": "object",
+  "properties": {
+    "flavour": {
+      "type": "string",
+      "description": "Flavour of the estimator"
+    }
+  }
+}
