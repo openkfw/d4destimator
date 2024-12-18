@@ -8,16 +8,22 @@ import {
 import React from "react";
 import runEngine from "../utils/runEngine";
 
-const GeneratedEstimator = ({ estimatorConfig, setCalculation }:{estimatorConfig:any, setCalculation:any}) => {
+const GeneratedEstimator = ({
+  estimatorConfig,
+  setCalculation,
+}: {
+  estimatorConfig: any;
+  setCalculation: any;
+}) => {
   const parameters = estimatorConfig.parameters;
   console.log("Rendering input parameters", parameters);
-  const handleChange = (key:any, value:any) => {
+  const handleChange = (key: any, value: any) => {
     console.log("Changing input", key, value); //e.g. users, 50+
 
     //for that field, set all selected options to false and toggle the selected to true
     const newEstimatorConfig = { ...estimatorConfig };
 
-    newEstimatorConfig.parameters[key].values.forEach((v:any) => {
+    newEstimatorConfig.parameters[key].values.forEach((v: any) => {
       console.log("Changing this field", v);
       v.selected = false;
       if (v.inputFactor === value) {
@@ -46,10 +52,10 @@ const GeneratedEstimator = ({ estimatorConfig, setCalculation }:{estimatorConfig
               sx={{ fontPalette: "black" }}
               labelId={`${field}-label`}
               label={data.label}
-              value={data.values.filter((d:any) => d.selected)[0].inputFactor}
+              value={data.values.filter((d: any) => d.selected)[0].inputFactor}
               onChange={(e) => handleChange(field, e.target.value)}
             >
-              {data.values.map((option:any, index:any) => (
+              {data.values.map((option: any, index: any) => (
                 <MenuItem key={index} value={option.inputFactor}>
                   {option.inputFactor}
                 </MenuItem>
