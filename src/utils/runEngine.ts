@@ -10,12 +10,12 @@ export default function runEngine(config: EstimatorConfig) {
   console.log("Using this config for the calculation", config);
 
   //lets iterate through all cost fields and add up effort where needed
-  costKeys.forEach((costkey: any) => {
+  costKeys.forEach((costkey) => {
     //for that costkey, check all parameter fields if there are effort. But only for the selected ones.
     calculatedConfig.costs[costkey].value = 0; //reset (just in case there was a default value)
-    parameterKeys.forEach((param: any) => {
+    parameterKeys.forEach((param) => {
       const selectedParameter = config.parameters[param].values.filter(
-        (x: any) => x.selected,
+        (x) => x.selected,
       )[0]; //I hope that only one parameter is set to true!
 
 
