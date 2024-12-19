@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/d4destimator/static/css/main.2d82c042.css",
+    "main.js": "/d4destimator/static/js/main.4c576a05.js",
+    "static/js/453.daab41cd.chunk.js": "/d4destimator/static/js/453.daab41cd.chunk.js",
+    "index.html": "/d4destimator/index.html",
+    "main.2d82c042.css.map": "/d4destimator/static/css/main.2d82c042.css.map",
+    "main.4c576a05.js.map": "/d4destimator/static/js/main.4c576a05.js.map",
+    "453.daab41cd.chunk.js.map": "/d4destimator/static/js/453.daab41cd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d82c042.css",
+    "static/js/main.4c576a05.js"
+  ]
+}
