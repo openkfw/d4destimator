@@ -1,18 +1,20 @@
 import { Typography } from "@mui/material";
 
 import Slider from "@mui/material/Slider";
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction } from "react";
 
 import runEngine from "../utils/runEngine";
-import { EstimatorConfig } from '../types/estimatorConfigType';
-
+import { EstimatorConfig } from "../types/estimatorConfigType";
 
 interface GeneratedConstantsProps {
   estimatorConfig: EstimatorConfig;
   setCalculation: Dispatch<SetStateAction<EstimatorConfig>>;
 }
 
-const GeneratedConstants:React.FC<GeneratedConstantsProps>= ({ estimatorConfig, setCalculation }) => {
+const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
+  estimatorConfig,
+  setCalculation,
+}) => {
   const handleChange =
     (id: string) => (event: Event, newValue: number | number[]) => {
       //console.log("Handle change for", id);
@@ -29,8 +31,7 @@ const GeneratedConstants:React.FC<GeneratedConstantsProps>= ({ estimatorConfig, 
           if (Array.isArray(newValue)) {
             throw new Error("newValue should be a number, not an array");
           }
-          newConfig.constants.runcosts.value =
-            newValue / 100;
+          newConfig.constants.runcosts.value = newValue / 100;
           break;
 
         case "tcoDuration":

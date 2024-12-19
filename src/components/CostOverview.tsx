@@ -2,6 +2,7 @@ import React from "react";
 
 import CostSummary from "./CostSummary";
 import CostDetails from "./CostDetails";
+import { EstimatorConfig } from "../types/estimatorConfigType";
 
 const calculateTotals = (config: any) => {
   const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
@@ -15,7 +16,10 @@ const calculateTotals = (config: any) => {
   return totals;
 };
 
-const CostOverview:React.FC<any> = ({ config }) => {
+interface CostOverviewProps {
+  config: EstimatorConfig;
+}
+const CostOverview: React.FC<CostOverviewProps> = ({ config }) => {
   const totals = calculateTotals(config);
   return (
     <div>

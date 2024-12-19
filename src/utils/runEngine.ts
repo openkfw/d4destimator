@@ -18,7 +18,6 @@ export default function runEngine(config: EstimatorConfig) {
         (x) => x.selected,
       )[0]; //I hope that only one parameter is set to true!
 
-
       //for the calculation runner, we don't need the flag if it's selected and what the inputFactor was
       const filteredValues = Object.fromEntries(
         Object.entries(selectedParameter).filter(

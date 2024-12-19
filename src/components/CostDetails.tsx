@@ -16,7 +16,7 @@ interface Cost {
   category: string;
 }
 
-const CostDetails:React.FC<any> = ({ config }) => {
+const CostDetails: React.FC<any> = ({ config }) => {
   console.log("Received a new engine result", config);
 
   if (!config.costs) {
