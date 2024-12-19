@@ -2,12 +2,17 @@ import React from "react";
 
 import CostSummary from "./CostSummary";
 import CostDetails from "./CostDetails";
-import { EstimatorConfig } from "../types/estimatorConfigType";
+import { EstimatorConfig, ConfigProps } from "../types/estimatorConfigType";
 
-const calculateTotals = (config: any) => {
+interface CostTotals {
+  totalChange: number;
+  totalRun: number;
+  totalTCO: number;
+}
+
+const calculateTotals = (config: EstimatorConfig): CostTotals => {
   const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
-  Object.values(config.costs).forEach((k: any) => {
-    //console.log("k,v", k, v);
+  Object.values(config.costs).forEach((k) => {
     totals.totalChange += k.value;
   });
   totals.totalRun = totals.totalChange * config.constants.runcosts.value;
@@ -16,10 +21,7 @@ const calculateTotals = (config: any) => {
   return totals;
 };
 
-interface CostOverviewProps {
-  config: EstimatorConfig;
-}
-const CostOverview: React.FC<CostOverviewProps> = ({ config }) => {
+const CostOverview: React.FC<ConfigProps> = ({ config }) => {
   const totals = calculateTotals(config);
   return (
     <div>

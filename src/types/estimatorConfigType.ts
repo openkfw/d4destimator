@@ -47,4 +47,8 @@ export interface EstimatorConfig {
   };
 }
 
+export interface ConfigProps {
+  config: EstimatorConfig;
+}
+
 export default EstimatorConfig;
