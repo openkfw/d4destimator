@@ -1,15 +1,10 @@
 import { Typography } from "@mui/material";
 
 import Slider from "@mui/material/Slider";
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 
 import runEngine from "../utils/runEngine";
-import { EstimatorConfig } from "../types/estimatorConfigType";
-
-interface GeneratedConstantsProps {
-  estimatorConfig: EstimatorConfig;
-  setCalculation: Dispatch<SetStateAction<EstimatorConfig>>;
-}
+import { GeneratedConstantsProps } from "../types/estimatorConfigType";
 
 const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
