@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface EstimatorConfig {
   flavour: string;
   author: string;
@@ -45,6 +47,15 @@ export interface EstimatorConfig {
       value: number;
     };
   };
+}
+
+export interface ConfigProps {
+  config: EstimatorConfig;
+}
+
+export interface GeneratedConstantsProps {
+  estimatorConfig: EstimatorConfig;
+  setCalculation: Dispatch<SetStateAction<EstimatorConfig>>;
 }
 
 export default EstimatorConfig;

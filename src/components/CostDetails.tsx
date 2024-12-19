@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Table,
   TableBody,
@@ -9,20 +10,22 @@ import {
   Typography,
 } from "@mui/material";
 
+import { ConfigProps } from "../types/estimatorConfigType";
+
 interface Cost {
   label: string;
   value: number;
   category: string;
 }
 
-const CostDetails = ({ config }: { config: any }) => {
+const CostDetails: React.FC<ConfigProps> = ({ config }) => {
   console.log("Received a new engine result", config);
 
   if (!config.costs) {
     throw new Error("Invalid costs object");
   }
   const categories: { [key: string]: Cost[] } = {};
-  Object.values(config.costs).forEach((cost: any) => {
+  Object.values(config.costs).forEach((cost) => {
     if (!categories[cost.category]) {
       categories[cost.category] = [];
     }

@@ -277,22 +277,22 @@
     },
     "hardware": {
       "label": "Hardware",
-      "value": 0.20,
+      "value": 0.2,
       "category": "Hard- and Software costs"
     },
     "procurement": {
       "label": "Procurement process",
-      "value": 0.60,
+      "value": 0.6,
       "category": "IT related staffing costs"
     },
     "infrastructureConfiguration": {
       "label": "Infrastructure configuration",
-      "value": 0.80,
+      "value": 0.8,
       "category": "IT related staffing costs"
     },
     "integrationSystems": {
       "label": "Integration of other systems via API",
-      "value": 1.00,
+      "value": 1.0,
       "category": "IT related staffing costs"
     },
     "securitySetup": {

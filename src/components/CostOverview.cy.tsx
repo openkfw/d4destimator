@@ -1,10 +1,10 @@
 import React from "react";
-import GeneratedConstants from "./GeneratedConstants";
+import CostOverview from "./CostOverview";
 import estimatorConfig from "../../src/assets/estimatorconfig.json";
 
-describe("<GeneratedConstants />", () => {
+describe("<CostOverview />", () => {
   it("renders", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<GeneratedConstants estimatorConfig={estimatorConfig} />);
+    cy.mount(<CostOverview config={estimatorConfig} />);
   });
 });
