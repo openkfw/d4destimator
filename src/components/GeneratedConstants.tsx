@@ -3,8 +3,15 @@ import { Typography } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import React from "react";
 import runEngine from "../utils/runEngine";
+import { EstimatorConfig } from '../types/estimatorConfigType';
 
-const GeneratedConstants = ({ estimatorConfig, setCalculation }: any) => {
+
+interface GeneratedConstantsProps {
+  estimatorConfig: EstimatorConfig;
+  setCalculation: (value: any) => void; // Passen Sie den Typ von setCalculation entsprechend an
+}
+
+const GeneratedConstants:React.FC<any>= ({ estimatorConfig, setCalculation }) => {
   const handleChange =
     (id: string) => (event: Event, newValue: number | number[]) => {
       //console.log("Handle change for", id);
