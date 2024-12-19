@@ -3,8 +3,7 @@ import React from "react";
 import CostSummary from "./CostSummary";
 import CostDetails from "./CostDetails";
 import { EstimatorConfig, ConfigProps } from "../types/estimatorConfigType";
-import {CostTotals} from "../types/CostTotals";
-
+import { CostTotals } from "../types/CostTotals";
 
 const calculateTotals = (config: EstimatorConfig): CostTotals => {
   const totals = { totalInitial: 0, totalRun: 0, totalTCO: 0 };

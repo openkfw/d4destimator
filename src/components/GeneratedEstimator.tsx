@@ -9,7 +9,6 @@ import React, { Dispatch, SetStateAction } from "react";
 import runEngine from "../utils/runEngine";
 import { EstimatorConfig } from "../types/estimatorConfigType";
 
-
 interface GeneratedConstantsProps {
   estimatorConfig: EstimatorConfig;
   setCalculation: Dispatch<SetStateAction<EstimatorConfig>>;
