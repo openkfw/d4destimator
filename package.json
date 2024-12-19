@@ -23,10 +23,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint src cypress",
+    "lint:fix": "eslint --fix src cypress",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:local": "PUBLIC_URL=./ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cy:open": "cypress open"

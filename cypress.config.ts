@@ -2,9 +2,13 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(_on, _config) {
-      // implement node event listeners here
-      // '_on' and '_config' are currently unused but may be used in the future
+    baseUrl: "http://localhost:3000",
+  },
+
+  component: {
+    devServer: {
+      framework: "create-react-app",
+      bundler: "webpack",
     },
   },
 });
