@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Table,
   TableBody,
@@ -15,7 +16,7 @@ interface Cost {
   category: string;
 }
 
-const CostDetails = ({ config }: { config: any }) => {
+const CostDetails:React.FC<any> = ({ config }) => {
   console.log("Received a new engine result", config);
 
   if (!config.costs) {

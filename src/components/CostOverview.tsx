@@ -15,7 +15,7 @@ const calculateTotals = (config: any) => {
   return totals;
 };
 
-const CostOverview = ({ config }: { config: any }) => {
+const CostOverview:React.FC<any> = ({ config }) => {
   const totals = calculateTotals(config);
   return (
     <div>
