@@ -26,7 +26,7 @@ export interface EstimatorConfig {
   costs: {
     [key: string]: {
       label: string;
-      value: string;
+      value: number;
       category: string;
     };
   };
@@ -34,15 +34,15 @@ export interface EstimatorConfig {
     dailyrate: {
       label: string;
       currency: string;
-      value: string;
+      value: number;
     };
     runcosts: {
       unit: string;
-      value: string;
+      value: number;
     };
     tcoduration: {
       unit: string;
-      value: string;
+      value: number;
     };
   };
 }
