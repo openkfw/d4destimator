@@ -3,21 +3,17 @@ import React from "react";
 import CostSummary from "./CostSummary";
 import CostDetails from "./CostDetails";
 import { EstimatorConfig, ConfigProps } from "../types/estimatorConfigType";
+import {CostTotals} from "../types/CostTotals";
 
-interface CostTotals {
-  totalChange: number;
-  totalRun: number;
-  totalTCO: number;
-}
 
 const calculateTotals = (config: EstimatorConfig): CostTotals => {
-  const totals = { totalChange: 0, totalRun: 0, totalTCO: 0 };
+  const totals = { totalInitial: 0, totalRun: 0, totalTCO: 0 };
   Object.values(config.costs).forEach((k) => {
-    totals.totalChange += k.value;
+    totals.totalInitial += k.value;
   });
-  totals.totalRun = totals.totalChange * config.constants.runcosts.value;
+  totals.totalRun = totals.totalInitial * config.constants.runcosts.value;
   totals.totalTCO =
-    totals.totalChange + totals.totalRun * config.constants.tcoduration.value;
+    totals.totalInitial + totals.totalRun * config.constants.tcoduration.value;
   return totals;
 };
 
@@ -26,9 +22,9 @@ const CostOverview: React.FC<ConfigProps> = ({ config }) => {
   return (
     <div>
       <CostSummary
-        totalInitial={totals.totalChange}
+        totalInitial={totals.totalInitial}
         totalRun={totals.totalRun}
-        totalCostOfOwnership={totals.totalTCO}
+        totalTCO={totals.totalTCO}
       />
       <CostDetails config={config} />
     </div>

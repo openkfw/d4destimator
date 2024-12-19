@@ -2,15 +2,14 @@ import React from "react";
 import { Box, Typography, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
+import {CostTotals} from "../types/CostTotals";
+
+
 const CostSummary = ({
   totalInitial,
   totalRun,
-  totalCostOfOwnership,
-}: {
-  totalInitial: any;
-  totalRun: any;
-  totalCostOfOwnership: any;
-}) => {
+  totalTCO,
+}: CostTotals ) => {
   //do some formatting
   const formattedTotalInitial = new Intl.NumberFormat("de-DE", {
     style: "currency",
@@ -23,7 +22,7 @@ const CostSummary = ({
   const formattedTotalCostOfOwnership = new Intl.NumberFormat("de-DE", {
     style: "currency",
     currency: "EUR",
-  }).format(totalCostOfOwnership);
+  }).format(totalTCO);
 
   return (
     <Box p={2} component={Paper}>
