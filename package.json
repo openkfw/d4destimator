@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "homepage": "https://openkfw.github.io/d4destimator",
-  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
