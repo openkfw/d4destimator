@@ -1,8 +1,15 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "paths": {
+      "~*": ["./*"]
+    },
+    "strict": true,
+    "target": "ES2015",
+    "module": "ES2015"
+  },
   "exclude": ["**/*.cy.tsx"]
 }
