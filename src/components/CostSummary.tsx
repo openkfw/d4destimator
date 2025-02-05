@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid2";
 
 import { CostTotals } from "../types/CostTotals";
 
-const CostSummary = ({ totalInitial, totalRun, totalTCO }: CostTotals) => {
+const CostSummary = ({ totalInitial, totalRun, totalTCO, tCODuration }: CostTotals) => {
   //do some formatting
   const formattedTotalInitial = new Intl.NumberFormat("de-DE", {
     style: "currency",
@@ -36,7 +36,7 @@ const CostSummary = ({ totalInitial, totalRun, totalTCO }: CostTotals) => {
       <Grid spacing={2} direction="row" alignItems="flex-start">
         <Grid size={6}>
           <Typography align="left" sx={{ fontWeight: "bold" }}>
-            Total Cost of Ownership (3 years):
+            Total Cost of Ownership ({tCODuration} years):
           </Typography>
         </Grid>
 
