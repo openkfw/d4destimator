@@ -7,10 +7,18 @@ import { CostTotals } from "../types/CostTotals";
 
 const calculateTotals = (config: EstimatorConfig): CostTotals => {
   const totals = { totalInitial: 0, totalRun: 0, totalTCO: 0, tCODuration: 3 };
+
   Object.values(config.costs).forEach((k) => {
-    totals.totalInitial += k.value;
+    if (k.unit === "dailyrate"){
+      totals.totalInitial += k.value;
+      totals.totalRun += k.value * config.constants.runcosts.value;
+
+    } 
+    else if (k.unit === "licensefee"){
+      totals.totalInitial += k.value*2;
+      totals.totalRun += k.value;
+    }
   });
-  totals.totalRun = totals.totalInitial * config.constants.runcosts.value;
   totals.totalTCO =
     totals.totalInitial + totals.totalRun * config.constants.tcoduration.value;
   totals.tCODuration = config.constants.tcoduration.value ;
