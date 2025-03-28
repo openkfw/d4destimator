@@ -1,4 +1,4 @@
-import estimatorConfig from "../../src/assets/estimatorconfig.json";
+import estimatorConfig from "../../src/assets/dashboard_config.json";
 import runEngine from "../../src/utils/runEngine";
 
 describe("Test the estimator config", () => {

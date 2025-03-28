@@ -30,9 +30,16 @@ export interface EstimatorConfig {
       label: string;
       value: number;
       category: string;
+      unit: string;
     };
   };
   constants: {
+    licensefee: {
+      label: string;
+      currency: string;
+      value: number;
+    };
+
     dailyrate: {
       label: string;
       currency: string;

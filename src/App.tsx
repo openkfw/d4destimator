@@ -7,7 +7,7 @@ import CostOverview from "./components/CostOverview";
 import GeneratedEstimator from "./components/GeneratedEstimator";
 import runEngine from "./utils/runEngine";
 
-import estimatorConfig from "./assets/estimatorconfig.json";
+import estimatorConfig from "./assets/dashboard_config.json";
 import { EstimatorConfig } from "./types/estimatorConfigType";
 
 import {

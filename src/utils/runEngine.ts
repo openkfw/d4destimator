@@ -1,32 +1,56 @@
 import { EstimatorConfig } from "../../src/types/estimatorConfigType";
 
+// Definiere erlaubte Unit-Typen
+type AllowedUnit = "dailyrate" | "licensefee" | "runcosts" | "tcoduration";
+
+// Hilfsfunktion zur Validierung der Unit
+function isValidUnit(unit: string): unit is AllowedUnit {
+  return ["dailyrate", "licensefee", "runcosts", "tcoduration"].includes(unit);
+}
+
 export default function runEngine(config: EstimatorConfig) {
   const calculatedConfig = { ...config };
 
-  //the list of relevant efforts is in the results field, take this
   const costKeys = Object.keys(calculatedConfig.costs);
   const parameterKeys = Object.keys(calculatedConfig.parameters);
   console.log("Keys for the calculation:", costKeys);
   console.log("Using this config for the calculation", config);
 
-  //lets iterate through all cost fields and add up effort where needed
   costKeys.forEach((costkey) => {
-    //for that costkey, check all parameter fields if there are effort. But only for the selected ones.
-    calculatedConfig.costs[costkey].value = 0; //reset (just in case there was a default value)
+    // Unit sicher extrahieren und validieren
+    const unit = calculatedConfig.costs[costkey].unit;
+    
+    if (!isValidUnit(unit)) {
+      console.error(`Invalid unit "${unit}" found for cost key "${costkey}"`);
+      return; // Diese Kostenposition überspringen
+    }
+    
+    const propFactor = calculatedConfig.constants[unit].value;
+    
+    if (costkey === "licenses") {
+      console.log("Processing 'licenses' cost key:", calculatedConfig.costs[costkey]);
+      console.log("Processing 'licenses' cost key:", unit);
+      console.log("Factor value:", propFactor);
+    }
+
+    calculatedConfig.costs[costkey].value = 0;
+    
     parameterKeys.forEach((param) => {
       const selectedParameter = config.parameters[param].values.filter(
         (x) => x.selected,
-      )[0]; //I hope that only one parameter is set to true!
-
-      //for the calculation runner, we don't need the flag if it's selected and what the inputFactor was
+      )[0];
+      
       const filteredValues = Object.fromEntries(
         Object.entries(selectedParameter).filter(
           ([key]) => key !== "inputFactor" && key !== "selected",
         ),
       );
-      calculatedConfig.costs[costkey].value +=
-        parseInt(filteredValues[costkey] as string) *
-        calculatedConfig.constants.dailyrate.value;
+
+      if (filteredValues[costkey]) {
+        calculatedConfig.costs[costkey].value +=
+          parseInt(filteredValues[costkey] as string) *
+          propFactor;
+      }
     });
   });
 
