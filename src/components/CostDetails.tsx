@@ -10,13 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { ConfigProps } from "../types/estimatorConfigType";
-
-interface Cost {
-  label: string;
-  value: number;
-  category: string;
-}
+import { Cost, ConfigProps } from "../types/estimatorConfigType";
 
 const CostDetails: React.FC<ConfigProps> = ({ config }) => {
   console.log("Received a new engine result", config);
@@ -59,26 +53,44 @@ const CostDetails: React.FC<ConfigProps> = ({ config }) => {
                     <Typography variant="h6">{category}</Typography>
                   </TableCell>
                 </TableRow>
-                {categories[category].map((cost) => (
-                  <TableRow key={cost.label}>
-                    <TableCell>{cost.label}</TableCell>
-                    <TableCell>
-                      <Typography>
+                {categories[category].map((cost) => {
+                  // Deklariere die Variablen
+                  let initialCost = 0;
+                  let runningCost = 0;
+                  
+                  // Berechne die Werte basierend auf der Unit
+                  if (cost.unit === "dailyrate") {
+                    initialCost = cost.value;
+                    runningCost = cost.value * config.constants.runcosts.value;
+                  }
+                  else if (cost.unit === "licensefee") {
+                    initialCost = cost.value * 2;
+                    runningCost = cost.value;
+                  }
+                  
+                  console.log("Costs", cost.unit);
+                  
+                  // Gib das JSX-Element zurück
+                  return (
+                    <TableRow key={cost.label}>
+                      <TableCell>{cost.label}</TableCell>
+                      <TableCell>
+                        <Typography>
+                          {new Intl.NumberFormat("de-DE", {
+                            style: "currency",
+                            currency: config.constants.dailyrate.currency,
+                          }).format(initialCost)}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
                         {new Intl.NumberFormat("de-DE", {
                           style: "currency",
                           currency: config.constants.dailyrate.currency,
-                        }).format(cost.value)}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>
-                      {" "}
-                      {new Intl.NumberFormat("de-DE", {
-                        style: "currency",
-                        currency: config.constants.dailyrate.currency,
-                      }).format(cost.value * config.constants.runcosts.value)}
-                    </TableCell>
-                  </TableRow>
-                ))}
+                        }).format(runningCost)}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               </React.Fragment>
             ))}
           </TableBody>

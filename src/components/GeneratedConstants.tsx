@@ -12,7 +12,6 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
 }) => {
   const handleChange =
     (id: string) => (event: Event, newValue: number | number[]) => {
-      //console.log("Handle change for", id);
       const newConfig = { ...estimatorConfig };
       switch (id) {
         case "rate":
@@ -36,6 +35,13 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
           newConfig.constants.tcoduration.value = newValue;
           break;
 
+        case "licenceFee":
+          if (Array.isArray(newValue)) {
+            throw new Error("newValue should be a number, not an array");
+          }
+          newConfig.constants.licensefee.value = newValue;
+          break;
+
         default:
           console.log("Unknown parameter");
           // Handle any other cases or errors
@@ -54,7 +60,7 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         {estimatorConfig.flavour} estimator settings
       </Typography>
       <Typography>
-        Daily rate: {estimatorConfig.constants.dailyrate.value}
+       {estimatorConfig.constants.dailyrate.label}: {estimatorConfig.constants.dailyrate.value}
       </Typography>
       <Slider
         aria-label="Rate"
@@ -68,6 +74,24 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         min={100}
         max={2000}
       />
+      
+      {/* Licence Fee Slider */}
+      <Typography>
+        {estimatorConfig.constants.licensefee.label}: {estimatorConfig.constants.licensefee.value}
+      </Typography>
+      <Slider
+        aria-label="Licence Fee"
+        getAriaValueText={valuetext}
+        valueLabelDisplay="auto"
+        value={estimatorConfig.constants.licensefee.value}
+        onChange={handleChange("licenceFee")}
+        shiftStep={10}
+        step={25}
+        marks
+        min={0}
+        max={500}
+      />
+      
       <Typography>
         Run percentage: {estimatorConfig.constants.runcosts.value * 100} %
       </Typography>

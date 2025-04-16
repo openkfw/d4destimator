@@ -1,0 +1,244 @@
+{
+  "flavour": "Dashboards",
+  "author": "fretchen",
+  "version": "0.1",
+  "parameters": {
+    "users": {
+      "label": "Users",
+      "values": [
+        {
+          "inputFactor": "<10",
+          "selected": false,
+          "initialAnalysisDesign": "5",
+          "userTraining": "5",
+          "licenses":"5"
+        },
+        {
+          "inputFactor": "10-100",
+          "selected": true,
+          "initialAnalysisDesign": "10",
+          "changeManagement": "5",
+          "licenses":"50"
+        },
+        {
+          "inputFactor": "100+",
+          "selected": false,
+          "initialAnalysisDesign": "20",
+          "changeManagement": "10",
+          "adminTraining": "10",
+          "userTraining": "20",
+          "licenses":"500"
+        }
+      ]
+    },
+    "integrations": {
+      "label": "Integrated Systems",
+      "values": [
+        {
+          "inputFactor": "0",
+          "selected": false
+        },
+        {
+          "inputFactor": "1-3",
+          "selected": true,
+          "infrastructureConfiguration": "2",
+          "integrationSystems": "20",
+          "securitySetup": "2",
+          "monitoringSetup": "1",
+          "adminTraining": "4",
+          "adminOverhead": "5"
+        },
+        {
+          "inputFactor": "3+",
+          "selected": false,
+          "infrastructureConfiguration": "5",
+          "integrationSystems": "40",
+          "securitySetup": "4",
+          "monitoringSetup": "2",
+          "adminTraining": "8",
+          "adminOverhead": "10"
+        }
+      ]
+    },
+    "organisationalComplexity": {
+      "label": "Organisational complexity",
+      "values": [
+        {
+          "inputFactor": "low",
+          "selected": false,
+          "initialAnalysisDesign": "10",
+          "infrastructureConfiguration": "1",
+          "changeManagement": "5",
+          "adminTraining": "2",
+          "adminOverhead": "1"
+        },
+        {
+          "inputFactor": "medium",
+          "selected": true,
+          "initialAnalysisDesign": "30",
+          "procurement": "2",
+          "infrastructureConfiguration": "5",
+          "securitySetup": "2",
+          "monitoringSetup": "1",
+          "documentationAdaptation": "5",
+          "changeManagement": "10",
+          "adminTraining": "7",
+          "userTraining": "5",
+          "adminOverhead": "10"
+        },
+        {
+          "inputFactor": "high",
+          "selected": false,
+          "initialAnalysisDesign": "100",
+          "procurement": "4",
+          "infrastructureConfiguration": "10",
+          "securitySetup": "4",
+          "monitoringSetup": "2",
+          "documentationAdaptation": "10",
+          "changeManagement": "15",
+          "adminTraining": "15",
+          "userTraining": "10",
+          "adminOverhead": "20"
+        }
+      ]
+    },
+    "infrastructureLocation": {
+      "label": "Infrastructure location",
+      "values": [
+        {
+          "inputFactor": "own datacenter",
+          "selected": false,
+          "procurement": "10",
+          "hardware": "10",
+          "securitySetup": "2",
+          "monitoringSetup": "3"
+        },
+        {
+          "inputFactor": "remote hosting",
+          "selected": true,
+          "monitoringSetup": "3",
+          "documentationAdaptation": "10"
+        },
+        {
+          "inputFactor": "cloud",
+          "selected": false,
+          "procurement": "5",
+          "hardware": "2",
+          "securitySetup": "1",
+          "monitoringSetup": "1"        }
+      ]
+    },
+    "cybersecurity": {
+      "label": "Cybersecurity criticality",
+      "values": [
+        {
+          "inputFactor": "low",
+          "selected": false,
+          "infrastructureConfiguration": "1",
+          "securitySetup": "4"
+        },
+        {
+          "inputFactor": "medium",
+          "selected": true,
+          "infrastructureConfiguration": "5",
+          "securitySetup": "8",
+          "monitoringSetup": "1"
+        },
+        {
+          "inputFactor": "high",
+          "selected": false,
+          "infrastructureConfiguration": "10",
+          "securitySetup": "12",
+          "monitoringSetup": "2"
+        }
+      ]
+    }
+  },
+  "costs": {
+    "initialAnalysisDesign": {
+      "label": "Initial analysis and project setup",
+      "value": 1,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "licenses": {
+      "label": "License fees",
+      "value": 1,
+      "category": "Software",
+      "unit": "licensefee"
+
+    },
+    "hardware": {
+      "label": "Hardware",
+      "value": 0.2,
+      "category": "IT infrastructure",
+      "unit": "dailyrate"
+    },
+    "procurement": {
+      "label": "Procurement process",
+      "value": 0.6,
+      "category": "Non-technical Staff",
+      "unit": "dailyrate"
+    },
+    "infrastructureConfiguration": {
+      "label": "Infrastructure configuration",
+      "value": 0.8,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "integrationSystems": {
+      "label": "Integration of other systems via API",
+      "value": 1.0,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "securitySetup": {
+      "label": "Security setup",
+      "value": 0,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "monitoringSetup": {
+      "label": "Monitoring setup",
+      "value": 0,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "documentationAdaptation": {
+      "label": "Adapt documentation to local requirements",
+      "value": 3,
+      "category": "Technical Staff",
+      "unit": "dailyrate"
+    },
+    "changeManagement": {
+      "label": "Change Management business processes",
+      "value": 2,
+      "category": "Non-technical Staff",
+      "unit": "dailyrate"
+    },
+    "adminTraining": {
+      "label": "Administrator training",
+      "value": 1,
+      "category": "Non-technical Staff",
+      "unit": "dailyrate"
+    },
+    "userTraining": {
+      "label": "User training",
+      "value": 1,
+      "category": "Non-technical Staff",
+      "unit": "dailyrate"
+    },
+    "adminOverhead": {
+      "label": "Management overhead",
+      "value": 3,
+      "category": "Non-technical Staff",
+      "unit": "dailyrate"
+    }
+  },
+  "constants": {
+    "licensefee": { "label": "Yearly license fee per user", "currency": "EUR", "value": 10 },
+    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": 1000 },
+    "runcosts": { "unit": "Percentage", "value": 0.2 },
+    "tcoduration": { "unit": "Year", "value": 3 }
+  }
+}

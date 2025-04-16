@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
+export interface Cost  {
+  label: string;
+  value: number;
+  category: string;
+  unit: string;
+}
+
 export interface EstimatorConfig {
   flavour: string;
   author: string;
@@ -26,13 +33,15 @@ export interface EstimatorConfig {
     };
   };
   costs: {
-    [key: string]: {
-      label: string;
-      value: number;
-      category: string;
-    };
+    [key: string]: Cost;
   };
   constants: {
+    licensefee: {
+      label: string;
+      currency: string;
+      value: number;
+    };
+
     dailyrate: {
       label: string;
       currency: string;
