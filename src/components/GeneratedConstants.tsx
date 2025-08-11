@@ -5,6 +5,7 @@ import React from "react";
 
 import runEngine from "../utils/runEngine";
 import { GeneratedConstantsProps } from "../types/estimatorConfigType";
+import TooltipWrapper from "./TooltipWrapper";
 
 const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
@@ -59,9 +60,12 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
       <Typography variant="h6" gutterBottom>
         {estimatorConfig.flavour} estimator settings
       </Typography>
-      <Typography>
-       {estimatorConfig.constants.dailyrate.label}: {estimatorConfig.constants.dailyrate.value}
-      </Typography>
+      
+      <TooltipWrapper tooltip={estimatorConfig.constants.dailyrate.tooltip}>
+        <Typography>
+          {estimatorConfig.constants.dailyrate.label}: {estimatorConfig.constants.dailyrate.value}
+        </Typography>
+      </TooltipWrapper>
       <Slider
         aria-label="Rate"
         getAriaValueText={valuetext}
@@ -76,9 +80,11 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
       />
       
       {/* Licence Fee Slider */}
-      <Typography>
-        {estimatorConfig.constants.licensefee.label}: {estimatorConfig.constants.licensefee.value}
-      </Typography>
+      <TooltipWrapper tooltip={estimatorConfig.constants.licensefee.tooltip}>
+        <Typography>
+          {estimatorConfig.constants.licensefee.label}: {estimatorConfig.constants.licensefee.value}
+        </Typography>
+      </TooltipWrapper>
       <Slider
         aria-label="Licence Fee"
         getAriaValueText={valuetext}
@@ -92,9 +98,11 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         max={500}
       />
       
-      <Typography>
-        Run percentage: {estimatorConfig.constants.runcosts.value * 100} %
-      </Typography>
+      <TooltipWrapper tooltip={estimatorConfig.constants.runcosts.tooltip}>
+        <Typography>
+          Run percentage: {estimatorConfig.constants.runcosts.value * 100} %
+        </Typography>
+      </TooltipWrapper>
       <Slider
         aria-label="Rate"
         getAriaValueText={valuetext}
@@ -107,9 +115,11 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         min={0}
         max={100}
       />
-      <Typography>
-        TCO duration: {estimatorConfig.constants.tcoduration.value}
-      </Typography>
+      <TooltipWrapper tooltip={estimatorConfig.constants.tcoduration.tooltip}>
+        <Typography>
+          TCO duration: {estimatorConfig.constants.tcoduration.value}
+        </Typography>
+      </TooltipWrapper>
       <Slider
         aria-label="Rate"
         getAriaValueText={valuetext}

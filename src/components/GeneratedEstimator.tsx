@@ -4,10 +4,12 @@ import {
   MenuItem,
   Select,
   Typography,
+  Box,
 } from "@mui/material";
 import React from "react";
 import runEngine from "../utils/runEngine";
 import { GeneratedConstantsProps } from "../types/estimatorConfigType";
+import TooltipWrapper from "./TooltipWrapper";
 
 const GeneratedEstimator: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
@@ -42,24 +44,32 @@ const GeneratedEstimator: React.FC<GeneratedConstantsProps> = ({
       </Typography>
       <div>
         {Object.entries(parameters).map(([field, data]) => (
-          <FormControl key={field} fullWidth style={{ marginBottom: "16px" }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              {data.label}
-            </InputLabel>
-            <Select
-              sx={{ fontPalette: "black" }}
-              labelId={`${field}-label`}
-              label={data.label}
-              value={data.values.filter((d) => d.selected)[0].inputFactor}
-              onChange={(e) => handleChange(field, e.target.value)}
-            >
-              {data.values.map((option, index) => (
-                <MenuItem key={index} value={option.inputFactor}>
-                  {option.inputFactor}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+          <Box key={field} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 2 }}>
+            <FormControl fullWidth>
+              <InputLabel id={`${field}-label`}>{data.label}</InputLabel>
+              <Select
+                sx={{ fontPalette: "black" }}
+                labelId={`${field}-label`}
+                id={`${field}-select`}
+                label={data.label}
+                value={data.values.find((d) => d.selected)?.inputFactor || ""}
+                onChange={(e) => handleChange(field, e.target.value)}
+              >
+                {data.values.map((option, index) => (
+                  <MenuItem key={index} value={option.inputFactor}>
+                    {option.inputFactor}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            {data.tooltip && (
+              <TooltipWrapper tooltip={data.tooltip}>
+                <Box sx={{ display: 'flex', alignItems: 'center', minHeight: '56px' }}>
+                  {/* Empty box to position the tooltip icon next to the Select */}
+                </Box>
+              </TooltipWrapper>
+            )}
+          </Box>
         ))}
       </div>
     </div>

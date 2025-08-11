@@ -5,6 +5,7 @@
   "parameters": {
     "users": {
       "label": "Users",
+      "tooltip": "Number of end users who will actively use the system. This affects training costs, change management complexity, and overall infrastructure requirements.",
       "values": [
         {
           "inputFactor": "<10",
@@ -58,6 +59,7 @@
     },
     "integrations": {
       "label": "Integrated Systems",
+      "tooltip": "Number of external systems that need to be integrated with this solution via APIs or other interfaces. More integrations increase development time, security considerations, and ongoing maintenance requirements.",
       "values": [
         {
           "inputFactor": "0",
@@ -334,6 +336,7 @@
   "constants": {
     "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": 1000 },
     "runcosts": { "unit": "Percentage", "value": 0.2 },
+    "licensefee": { "label": "License Fee", "currency": "EUR", "value": 100 },
     "tcoduration": { "unit": "Year", "value": 3 }
   }
 }

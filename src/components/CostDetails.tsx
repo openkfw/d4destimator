@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 
 import { Cost, ConfigProps } from "../types/estimatorConfigType";
+import TooltipWrapper from "./TooltipWrapper";
 
 const CostDetails: React.FC<ConfigProps> = ({ config }) => {
   console.log("Received a new engine result", config);
@@ -73,7 +74,11 @@ const CostDetails: React.FC<ConfigProps> = ({ config }) => {
                   // Gib das JSX-Element zurück
                   return (
                     <TableRow key={cost.label}>
-                      <TableCell>{cost.label}</TableCell>
+                      <TableCell>
+                        <TooltipWrapper tooltip={cost.tooltip}>
+                          <Typography>{cost.label}</Typography>
+                        </TooltipWrapper>
+                      </TableCell>
                       <TableCell>
                         <Typography>
                           {new Intl.NumberFormat("de-DE", {
