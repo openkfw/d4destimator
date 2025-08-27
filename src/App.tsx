@@ -14,11 +14,11 @@ import {
   AppBar,
   Box,
   Container,
-  Grid,
   Paper,
   Toolbar,
   Typography,
 } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GeneratedConstants from "./components/GeneratedConstants";
 
@@ -78,7 +78,7 @@ function App() {
             }}
           >
             {/* Left Side */}
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Paper
                 elevation={3}
                 sx={{
@@ -113,7 +113,7 @@ function App() {
             </Grid>
 
             {/* Right Side */}
-            <Grid item xs={12} md={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <Paper
                 elevation={3}
                 sx={{
