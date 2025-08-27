@@ -25,7 +25,10 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
           if (Array.isArray(newValue)) {
             throw new Error("newValue should be a number, not an array");
           }
-          newConfig.constants.runcosts.value = newValue / 100;
+          // Quick fix: round the percentage to 2 decimals when storing to reduce
+          // floating-point artifacts (e.g. 55.00000000000001)
+          // newValue is expected as 0..100 (slider), store as fraction 0..1
+          newConfig.constants.runcosts.value = Math.round(newValue as number) / 100;
           break;
 
         case "tcoDuration":
@@ -51,7 +54,7 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
       setCalculation(runEngine(newConfig));
     };
   function valuetext(value: number) {
-    return `${value}`;
+    return `${value} %`;
   }
 
   return (
@@ -93,13 +96,14 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
       />
       
       <Typography>
-        Run percentage: {estimatorConfig.constants.runcosts.value * 100} %
+        Run percentage: {(estimatorConfig.constants.runcosts.value * 100).toFixed(2)} %
       </Typography>
       <Slider
-        aria-label="Rate"
+        aria-label="Run Percentage"
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
-        value={estimatorConfig.constants.runcosts.value * 100}
+        // Ensure slider sees a clean numeric value (rounded to nearest integer percent)
+        value={Math.round(estimatorConfig.constants.runcosts.value * 100)}
         onChange={handleChange("runPercentage")}
         shiftStep={4}
         step={5}
@@ -107,24 +111,24 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         min={0}
         max={100}
       />
-      <Typography>
-        TCO duration: {estimatorConfig.constants.tcoduration.value}
-      </Typography>
-      <Slider
-        aria-label="Rate"
-        getAriaValueText={valuetext}
-        valueLabelDisplay="auto"
-        value={estimatorConfig.constants.tcoduration.value}
-        onChange={handleChange("tcoDuration")}
-        shiftStep={1}
-        step={1}
-        marks
-        min={1}
-        max={10}
-      />
-      <div></div>
-    </div>
-  );
-};
+       <Typography>
+         TCO duration: {estimatorConfig.constants.tcoduration.value}
+       </Typography>
+       <Slider
+         aria-label="Rate"
+         getAriaValueText={valuetext}
+         valueLabelDisplay="auto"
+         value={estimatorConfig.constants.tcoduration.value}
+         onChange={handleChange("tcoDuration")}
+         shiftStep={1}
+         step={1}
+         marks
+         min={1}
+         max={10}
+       />
+       <div></div>
+     </div>
+   );
+ };
 
-export default GeneratedConstants;
+ export default GeneratedConstants;
