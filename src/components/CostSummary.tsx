@@ -21,27 +21,30 @@ const CostSummary = ({ totalInitial, totalRun, totalTCO, tCODuration }: CostTota
 
   return (
     <Box p={2} component={Paper}>
-      <Grid spacing={2} direction="row" alignItems="flex-start">
+      <Grid container spacing={2}>
         <Grid size={6}>
           <Typography align="left">Total Initial Cost:</Typography>
         </Grid>
-        <Grid size={6}>{formattedTotalInitial} </Grid>
+        <Grid size={6}>
+          <Typography align="right">{formattedTotalInitial}</Typography>
+        </Grid>
       </Grid>
-      <Grid>
+      <Grid container spacing={2}>
         <Grid size={6}>
           <Typography align="left">Total Run Cost per Year:</Typography>
         </Grid>
-        <Grid size={6}>{formattedTotalRun} </Grid>
+        <Grid size={6}>
+          <Typography align="right">{formattedTotalRun}</Typography>
+        </Grid>
       </Grid>
-      <Grid spacing={2} direction="row" alignItems="flex-start">
+      <Grid container spacing={2} sx={{ mt: '6pt' }}>
         <Grid size={6}>
           <Typography align="left" sx={{ fontWeight: "bold" }}>
             Total Cost of Ownership ({tCODuration} years):
           </Typography>
         </Grid>
-
         <Grid size={6}>
-          <Typography sx={{ fontWeight: "bold" }}>
+          <Typography align="right" sx={{ fontWeight: "bold" }}>
             {formattedTotalCostOfOwnership}
           </Typography>
         </Grid>
