@@ -9,7 +9,7 @@ describe("<GeneratedEstimator />", () => {
   it("renders", () => {
     cy.mount(
       <GeneratedEstimator 
-        estimatorConfig={estimatorConfig as any} 
+        estimatorConfig={estimatorConfig} 
         setCalculation={mockSetCalculation}
       />
     );
