@@ -5,6 +5,7 @@
   "parameters": {
     "users": {
       "label": "Users",
+      "tooltip": "Number of end users who will actively use the system. This affects training costs, change management complexity, and overall infrastructure requirements.",
       "values": [
         {
           "inputFactor": "<10",
@@ -33,6 +34,7 @@
     },
     "integrations": {
       "label": "Integrated Systems",
+      "tooltip": "Number of external systems that need to be integrated with this solution via APIs or other interfaces. More integrations increase development time, security considerations, and ongoing maintenance requirements.",
       "values": [
         {
           "inputFactor": "0",
@@ -176,6 +178,7 @@
     },
     "procurement": {
       "label": "Procurement process",
+      "tooltip": "The administrative process for acquiring software, hardware, or services. This includes vendor evaluation, contract negotiation, compliance checks, and approval workflows. Duration varies based on organizational complexity and procurement policies.",
       "value": 0.6,
       "category": "Non-technical Staff",
       "unit": "dailyrate"
@@ -212,6 +215,7 @@
     },
     "changeManagement": {
       "label": "Change Management business processes",
+      "tooltip": "The structured approach to transitioning individuals and teams from current business processes to new ones. Includes stakeholder communication, training material updates, process documentation, and ensuring user adoption of new workflows.",
       "value": 2,
       "category": "Non-technical Staff",
       "unit": "dailyrate"
@@ -236,9 +240,29 @@
     }
   },
   "constants": {
-    "licensefee": { "label": "Yearly license fee per user", "currency": "EUR", "value": 10 },
-    "dailyrate": { "label": "Daily Rate", "currency": "EUR", "value": 1000 },
-    "runcosts": { "unit": "Percentage", "value": 0.2 },
-    "tcoduration": { "unit": "Year", "value": 3 }
+    "licensefee": { 
+      "label": "Yearly license fee per user", 
+      "tooltip": "The annual cost for software licenses per user. This typically includes subscription fees, maintenance costs, and support services provided by the software vendor.",
+      "currency": "EUR", 
+      "value": 10 
+    },
+    "dailyrate": { 
+      "label": "Daily Rate", 
+      "tooltip": "The standard daily rate for consultants and technical staff. This rate is used to calculate personnel costs for all project activities and ongoing operational support.",
+      "currency": "EUR", 
+      "value": 1000 
+    },
+    "runcosts": { 
+      "label": "Run Percentage",
+      "tooltip": "The percentage of initial implementation costs required annually for ongoing operations. This covers maintenance, support, updates, and operational overhead.",
+      "unit": "Percentage", 
+      "value": 0.2 
+    },
+    "tcoduration": { 
+      "label": "TCO Duration",
+      "tooltip": "Total Cost of Ownership duration in years. This defines the time period over which the complete lifecycle costs (initial + operational) are calculated for investment planning.",
+      "unit": "Year", 
+      "value": 3 
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface Cost  {
   label: string;
+  tooltip?: string;
   value: number;
   category: string;
   unit: string;
@@ -14,6 +15,7 @@ export interface EstimatorConfig {
   parameters: {
     [key: string]: {
       label: string;
+      tooltip?: string;
       values: Array<{
         inputFactor: string;
         selected: boolean;
@@ -38,20 +40,26 @@ export interface EstimatorConfig {
   constants: {
     licensefee: {
       label: string;
+      tooltip?: string;
       currency: string;
       value: number;
     };
 
     dailyrate: {
       label: string;
+      tooltip?: string;
       currency: string;
       value: number;
     };
     runcosts: {
+      label: string;
+      tooltip?: string;
       unit: string;
       value: number;
     };
     tcoduration: {
+      label: string;
+      tooltip?: string;
       unit: string;
       value: number;
     };
