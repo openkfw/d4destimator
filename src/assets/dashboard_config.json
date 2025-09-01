@@ -64,6 +64,8 @@
     },
     "organisationalComplexity": {
       "label": "Organisational complexity",
+      "tooltip": "How complicated is the organisational structure of the company? More complex structures will require additional implementation ressources, change management and training efforts.",
+
       "values": [
         {
           "inputFactor": "low",
@@ -106,6 +108,8 @@
     },
     "infrastructureLocation": {
       "label": "Infrastructure location",
+      "tooltip": "Where is the infrastructure located. The own datacenter will take more time to set up compared to cloud solutions and typically lead to more initial investment.",
+
       "values": [
         {
           "inputFactor": "own datacenter",
@@ -132,6 +136,7 @@
     },
     "cybersecurity": {
       "label": "Cybersecurity criticality",
+      "tooltip": "How important is cybersecurity for the organization? High requirements on data protection necessitate additional resources.",
       "values": [
         {
           "inputFactor": "low",
