@@ -164,22 +164,25 @@
   "costs": {
     "initialAnalysisDesign": {
       "label": "Initial analysis and project setup",
-      "value": 1,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 1,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort for initial analysis, solution design and project setup (architecture, workshops, planning)."
     },
     "licenses": {
       "label": "License fees",
-      "value": 1,
-      "category": "Software",
-      "unit": "licensefee"
+  "value": 1,
+  "category": "Software",
+  "unit": "licensefee",
+  "tooltip": "Annual license and subscription costs for software components, typically charged per user or per tenant." 
 
     },
     "hardware": {
       "label": "Hardware",
-      "value": 0.2,
-      "category": "IT infrastructure",
-      "unit": "dailyrate"
+  "value": 0.2,
+  "category": "IT infrastructure",
+  "unit": "dailyrate",
+  "tooltip": "Costs related to procurement, installation and configuration of physical hardware and on-prem resources." 
     },
     "procurement": {
       "label": "Procurement process",
@@ -190,33 +193,38 @@
     },
     "infrastructureConfiguration": {
       "label": "Infrastructure configuration",
-      "value": 0.8,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 0.8,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort to provision, configure and harden infrastructure components such as servers, networks and cloud services." 
     },
     "integrationSystems": {
       "label": "Integration of other systems via API",
-      "value": 1.0,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 1.0,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort to design, implement and test integrations with external systems (APIs, ETL, connectors)." 
     },
     "securitySetup": {
       "label": "Security setup",
-      "value": 0,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 0,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Work required to implement security measures, access controls, encryption and compliance-related tasks." 
     },
     "monitoringSetup": {
       "label": "Monitoring setup",
-      "value": 0,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 0,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort to configure monitoring, alerting and observability for operations and incident response." 
     },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
-      "value": 3,
-      "category": "Technical Staff",
-      "unit": "dailyrate"
+  "value": 3,
+  "category": "Technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort to adapt user guides, technical documentation and runbooks to the customer's environment and processes." 
     },
     "changeManagement": {
       "label": "Change Management business processes",
@@ -227,21 +235,24 @@
     },
     "adminTraining": {
       "label": "Administrator training",
-      "value": 1,
-      "category": "Non-technical Staff",
-      "unit": "dailyrate"
+  "value": 1,
+  "category": "Non-technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Training effort for administrators and support staff to operate and maintain the solution." 
     },
     "userTraining": {
       "label": "User training",
-      "value": 1,
-      "category": "Non-technical Staff",
-      "unit": "dailyrate"
+  "value": 1,
+  "category": "Non-technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Effort to prepare and deliver training for end users, including materials and sessions." 
     },
     "adminOverhead": {
       "label": "Management overhead",
-      "value": 3,
-      "category": "Non-technical Staff",
-      "unit": "dailyrate"
+  "value": 3,
+  "category": "Non-technical Staff",
+  "unit": "dailyrate",
+  "tooltip": "Ongoing management and coordination effort required to keep the project and operations running smoothly." 
     }
   },
   "constants": {
