@@ -186,7 +186,7 @@
     "infrastructureConfiguration": {
       "label": "Infrastructure configuration",
       "value": 0.8,
-      "category": "Technical Staff",
+  "category": "IT infrastructure",
       "unit": "dailyrate"
     },
     "integrationSystems": {
@@ -204,13 +204,13 @@
     "monitoringSetup": {
       "label": "Monitoring setup",
       "value": 0,
-      "category": "Technical Staff",
+  "category": "IT infrastructure",
       "unit": "dailyrate"
     },
     "documentationAdaptation": {
       "label": "Adapt documentation to local requirements",
       "value": 3,
-      "category": "Technical Staff",
+  "category": "Non-technical Staff",
       "unit": "dailyrate"
     },
     "changeManagement": {
