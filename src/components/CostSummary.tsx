@@ -1,22 +1,22 @@
-import React from "react";
-import { Box, Typography, Paper } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import React from 'react';
+import { Box, Typography, Paper } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
-import { CostTotals } from "../types/CostTotals";
+import { CostTotals } from '../types/CostTotals';
 
 const CostSummary = ({ totalInitial, totalRun, totalTCO, tCODuration }: CostTotals) => {
   //do some formatting
-  const formattedTotalInitial = new Intl.NumberFormat("de-DE", {
-    style: "currency",
-    currency: "EUR",
+  const formattedTotalInitial = new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency: 'EUR',
   }).format(totalInitial);
-  const formattedTotalRun = new Intl.NumberFormat("de-DE", {
-    style: "currency",
-    currency: "EUR",
+  const formattedTotalRun = new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency: 'EUR',
   }).format(totalRun);
-  const formattedTotalCostOfOwnership = new Intl.NumberFormat("de-DE", {
-    style: "currency",
-    currency: "EUR",
+  const formattedTotalCostOfOwnership = new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency: 'EUR',
   }).format(totalTCO);
 
   return (
@@ -39,12 +39,12 @@ const CostSummary = ({ totalInitial, totalRun, totalTCO, tCODuration }: CostTota
       </Grid>
       <Grid container spacing={2} sx={{ mt: '6pt' }}>
         <Grid size={6}>
-          <Typography align="left" sx={{ fontWeight: "bold" }}>
+          <Typography align="left" sx={{ fontWeight: 'bold' }}>
             Total Cost of Ownership ({tCODuration} years):
           </Typography>
         </Grid>
         <Grid size={6}>
-          <Typography align="right" sx={{ fontWeight: "bold" }}>
+          <Typography align="right" sx={{ fontWeight: 'bold' }}>
             {formattedTotalCostOfOwnership}
           </Typography>
         </Grid>
