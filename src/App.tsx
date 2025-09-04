@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import "./App.css";
+import './App.css';
 
-import CostOverview from "./components/CostOverview";
+import CostOverview from './components/CostOverview';
 
-import GeneratedEstimator from "./components/GeneratedEstimator";
-import runEngine from "./utils/runEngine";
+import GeneratedEstimator from './components/GeneratedEstimator';
+import runEngine from './utils/runEngine';
 
-import estimatorConfig from "./assets/dashboard_config.json";
-import { EstimatorConfig } from "./types/estimatorConfigType";
+import estimatorConfig from './assets/dashboard_config.json';
+import { EstimatorConfig } from './types/estimatorConfigType';
 
-import {
-  AppBar,
-  Box,
-  Container,
-  Paper,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import Grid from "@mui/material/Grid2";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GeneratedConstants from "./components/GeneratedConstants";
+import { AppBar, Box, Container, Paper, Toolbar, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GeneratedConstants from './components/GeneratedConstants';
 
 const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
 
@@ -30,23 +23,23 @@ function App() {
     const result = runEngine(estimatorConfigTyped);
     setCalculation(result);
 
-    console.log("Running engine:", result);
+    console.log('Running engine:', result);
   }, []);
 
   return (
     <div className="App">
       <Box
         sx={{
-          minHeight: "100vh",
+          minHeight: '100vh',
           background:
-            " linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,48,5,1) 35%, rgba(19,4,136,1) 100%)",
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
+            ' linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,48,5,1) 35%, rgba(19,4,136,1) 100%)',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         {/* Header */}
-        <AppBar position="static" sx={{ backgroundColor: "#333" }}>
+        <AppBar position="static" sx={{ backgroundColor: '#333' }}>
           <Toolbar>
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
               D4D Cost Estimator for digital systems
@@ -56,10 +49,10 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "white",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
+                color: 'white',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
               <GitHubIcon sx={{ marginRight: 1 }} />
@@ -74,7 +67,7 @@ function App() {
             container
             spacing={4}
             sx={{
-              height: "100%",
+              height: '100%',
             }}
           >
             {/* Left Side */}
@@ -84,7 +77,7 @@ function App() {
                 sx={{
                   p: 3,
                   borderRadius: 2,
-                  backgroundColor: "rgba(255, 255, 255, 1.0)",
+                  backgroundColor: 'rgba(255, 255, 255, 1.0)',
                 }}
               >
                 <div>
@@ -100,7 +93,7 @@ function App() {
                   p: 3,
                   my: 2,
                   borderRadius: 2,
-                  backgroundColor: "rgba(255, 255, 255, 1.0)",
+                  backgroundColor: 'rgba(255, 255, 255, 1.0)',
                 }}
               >
                 <div>
@@ -119,7 +112,7 @@ function App() {
                 sx={{
                   p: 3,
                   borderRadius: 2,
-                  backgroundColor: "rgba(255, 255, 255, 0.)",
+                  backgroundColor: 'rgba(255, 255, 255, 0.)',
                 }}
               >
                 <CostOverview config={calculation} />
@@ -133,8 +126,8 @@ function App() {
           component="footer"
           sx={{
             py: 2,
-            textAlign: "center",
-            backgroundColor: "#333",
+            textAlign: 'center',
+            backgroundColor: '#333',
           }}
         >
           <Typography variant="body2" color="white">

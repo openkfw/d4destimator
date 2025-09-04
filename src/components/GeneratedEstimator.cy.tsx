@@ -1,17 +1,14 @@
-import React from "react";
-import GeneratedEstimator from "./GeneratedEstimator";
+import React from 'react';
+import GeneratedEstimator from './GeneratedEstimator';
 
-import estimatorConfig from "../../src/assets/estimatorconfig.json";
+import estimatorConfig from '../../src/assets/estimatorconfig.json';
 
-describe("<GeneratedEstimator />", () => {
+describe('<GeneratedEstimator />', () => {
   const mockSetCalculation = () => {};
 
-  it("renders", () => {
+  it('renders', () => {
     cy.mount(
-      <GeneratedEstimator 
-        estimatorConfig={estimatorConfig} 
-        setCalculation={mockSetCalculation}
-      />
+      <GeneratedEstimator estimatorConfig={estimatorConfig} setCalculation={mockSetCalculation} />
     );
   });
 });

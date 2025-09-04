@@ -1,59 +1,58 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
-import Slider from "@mui/material/Slider";
-import React from "react";
+import Slider from '@mui/material/Slider';
+import React from 'react';
 
-import runEngine from "../utils/runEngine";
-import { GeneratedConstantsProps } from "../types/estimatorConfigType";
-import TooltipWrapper from "./TooltipWrapper";
+import runEngine from '../utils/runEngine';
+import { GeneratedConstantsProps } from '../types/estimatorConfigType';
+import TooltipWrapper from './TooltipWrapper';
 
 const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
   setCalculation,
 }) => {
-  const handleChange =
-    (id: string) => (event: Event, newValue: number | number[]) => {
-      const newConfig = { ...estimatorConfig };
-      switch (id) {
-        case "rate":
-          if (Array.isArray(newValue)) {
-            throw new Error("newValue should be a number, not an array");
-          }
-          newConfig.constants.dailyrate.value = newValue;
-          break;
+  const handleChange = (id: string) => (event: Event, newValue: number | number[]) => {
+    const newConfig = { ...estimatorConfig };
+    switch (id) {
+      case 'rate':
+        if (Array.isArray(newValue)) {
+          throw new Error('newValue should be a number, not an array');
+        }
+        newConfig.constants.dailyrate.value = newValue;
+        break;
 
-        case "runPercentage":
-          if (Array.isArray(newValue)) {
-            throw new Error("newValue should be a number, not an array");
-          }
-          // Quick fix: round the percentage to 2 decimals when storing to reduce
-          // floating-point artifacts (e.g. 55.00000000000001)
-          // newValue is expected as 0..100 (slider), store as fraction 0..1
-          newConfig.constants.runcosts.value = Math.round(newValue as number) / 100;
-          break;
+      case 'runPercentage':
+        if (Array.isArray(newValue)) {
+          throw new Error('newValue should be a number, not an array');
+        }
+        // Quick fix: round the percentage to 2 decimals when storing to reduce
+        // floating-point artifacts (e.g. 55.00000000000001)
+        // newValue is expected as 0..100 (slider), store as fraction 0..1
+        newConfig.constants.runcosts.value = Math.round(newValue as number) / 100;
+        break;
 
-        case "tcoDuration":
-          if (Array.isArray(newValue)) {
-            throw new Error("newValue should be a number, not an array");
-          }
-          newConfig.constants.tcoduration.value = newValue;
-          break;
+      case 'tcoDuration':
+        if (Array.isArray(newValue)) {
+          throw new Error('newValue should be a number, not an array');
+        }
+        newConfig.constants.tcoduration.value = newValue;
+        break;
 
-        case "licenceFee":
-          if (Array.isArray(newValue)) {
-            throw new Error("newValue should be a number, not an array");
-          }
-          newConfig.constants.licensefee.value = newValue;
-          break;
+      case 'licenceFee':
+        if (Array.isArray(newValue)) {
+          throw new Error('newValue should be a number, not an array');
+        }
+        newConfig.constants.licensefee.value = newValue;
+        break;
 
-        default:
-          console.log("Unknown parameter");
-          // Handle any other cases or errors
-          break;
-      }
+      default:
+        console.log('Unknown parameter');
+        // Handle any other cases or errors
+        break;
+    }
 
-      setCalculation(runEngine(newConfig));
-    };
+    setCalculation(runEngine(newConfig));
+  };
   function valuetext(value: number) {
     return `${value} %`;
   }
@@ -63,7 +62,7 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
       <Typography variant="h6" gutterBottom>
         {estimatorConfig.flavour} estimator settings
       </Typography>
-      
+
       <TooltipWrapper tooltip={estimatorConfig.constants.dailyrate.tooltip}>
         <Typography>
           {estimatorConfig.constants.dailyrate.label}: {estimatorConfig.constants.dailyrate.value}
@@ -74,14 +73,14 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         value={estimatorConfig.constants.dailyrate.value}
-        onChange={handleChange("rate")}
+        onChange={handleChange('rate')}
         shiftStep={30}
         step={100}
         marks
         min={100}
         max={2000}
       />
-      
+
       {/* Licence Fee Slider */}
       <TooltipWrapper tooltip={estimatorConfig.constants.licensefee.tooltip}>
         <Typography>
@@ -93,14 +92,14 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         value={estimatorConfig.constants.licensefee.value}
-        onChange={handleChange("licenceFee")}
+        onChange={handleChange('licenceFee')}
         shiftStep={10}
         step={25}
         marks
         min={0}
         max={500}
       />
-      
+
       <TooltipWrapper tooltip={estimatorConfig.constants.runcosts.tooltip}>
         <Typography>
           Run percentage: {(estimatorConfig.constants.runcosts.value * 100).toFixed(2)} %
@@ -112,7 +111,7 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         valueLabelDisplay="auto"
         // Ensure slider sees a clean numeric value (rounded to nearest integer percent)
         value={Math.round(estimatorConfig.constants.runcosts.value * 100)}
-        onChange={handleChange("runPercentage")}
+        onChange={handleChange('runPercentage')}
         shiftStep={4}
         step={5}
         marks
@@ -120,16 +119,14 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
         max={100}
       />
       <TooltipWrapper tooltip={estimatorConfig.constants.tcoduration.tooltip}>
-        <Typography>
-          TCO duration: {estimatorConfig.constants.tcoduration.value}
-        </Typography>
+        <Typography>TCO duration: {estimatorConfig.constants.tcoduration.value}</Typography>
       </TooltipWrapper>
       <Slider
         aria-label="Rate"
         getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         value={estimatorConfig.constants.tcoduration.value}
-        onChange={handleChange("tcoDuration")}
+        onChange={handleChange('tcoDuration')}
         shiftStep={1}
         step={1}
         marks
@@ -141,4 +138,4 @@ const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
   );
 };
 
- export default GeneratedConstants;
+export default GeneratedConstants;

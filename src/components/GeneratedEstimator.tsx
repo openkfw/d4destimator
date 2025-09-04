@@ -1,38 +1,31 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-  Box,
-} from "@mui/material";
-import React from "react";
-import runEngine from "../utils/runEngine";
-import { GeneratedConstantsProps } from "../types/estimatorConfigType";
-import TooltipWrapper from "./TooltipWrapper";
+import { FormControl, InputLabel, MenuItem, Select, Typography, Box } from '@mui/material';
+import React from 'react';
+import runEngine from '../utils/runEngine';
+import { GeneratedConstantsProps } from '../types/estimatorConfigType';
+import TooltipWrapper from './TooltipWrapper';
 
 const GeneratedEstimator: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
   setCalculation,
 }) => {
   const parameters = estimatorConfig.parameters;
-  console.log("Rendering input parameters", parameters);
+  console.log('Rendering input parameters', parameters);
   const handleChange = (key: string, value: string) => {
-    console.log("Changing input", key, value); //e.g. users, 50+
+    console.log('Changing input', key, value); //e.g. users, 50+
 
     //for that field, set all selected options to false and toggle the selected to true
     const newEstimatorConfig = { ...estimatorConfig };
 
     newEstimatorConfig.parameters[key].values.forEach((v) => {
-      console.log("Changing this field", v);
+      console.log('Changing this field', v);
       v.selected = false;
       if (v.inputFactor === value) {
-        console.log("Found match", v);
+        console.log('Found match', v);
         v.selected = true;
       }
     });
 
-    console.log("Updated estimator config", newEstimatorConfig);
+    console.log('Updated estimator config', newEstimatorConfig);
 
     setCalculation(runEngine(newEstimatorConfig));
   };
@@ -48,11 +41,11 @@ const GeneratedEstimator: React.FC<GeneratedConstantsProps> = ({
             <FormControl fullWidth>
               <InputLabel id={`${field}-label`}>{data.label}</InputLabel>
               <Select
-                sx={{ fontPalette: "black" }}
+                sx={{ fontPalette: 'black' }}
                 labelId={`${field}-label`}
                 id={`${field}-select`}
                 label={data.label}
-                value={data.values.find((d) => d.selected)?.inputFactor || ""}
+                value={data.values.find((d) => d.selected)?.inputFactor || ''}
                 onChange={(e) => handleChange(field, e.target.value)}
               >
                 {data.values.map((option, index) => (
