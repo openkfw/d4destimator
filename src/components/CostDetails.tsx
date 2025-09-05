@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Table,
@@ -8,16 +8,16 @@ import {
   TableHead,
   TableRow,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import { Cost, ConfigProps } from "../types/estimatorConfigType";
-import TooltipWrapper from "./TooltipWrapper";
+import { Cost, ConfigProps } from '../types/estimatorConfigType';
+import TooltipWrapper from './TooltipWrapper';
 
 const CostDetails: React.FC<ConfigProps> = ({ config }) => {
-  console.log("Received a new engine result", config);
+  console.log('Received a new engine result', config);
 
   if (!config.costs) {
-    throw new Error("Invalid costs object");
+    throw new Error('Invalid costs object');
   }
   const categories: { [key: string]: Cost[] } = {};
   Object.values(config.costs).forEach((cost) => {
@@ -28,7 +28,7 @@ const CostDetails: React.FC<ConfigProps> = ({ config }) => {
   });
 
   const sortedCategories = Object.keys(categories).sort();
-  console.log("Sorted categories", sortedCategories);
+  console.log('Sorted categories', sortedCategories);
   return (
     <div>
       <TableContainer>
@@ -58,19 +58,18 @@ const CostDetails: React.FC<ConfigProps> = ({ config }) => {
                   // Deklariere die Variablen
                   let initialCost = 0;
                   let runningCost = 0;
-                  
+
                   // Berechne die Werte basierend auf der Unit
-                  if (cost.unit === "dailyrate") {
+                  if (cost.unit === 'dailyrate') {
                     initialCost = cost.value;
                     runningCost = cost.value * config.constants.runcosts.value;
-                  }
-                  else if (cost.unit === "licensefee") {
+                  } else if (cost.unit === 'licensefee') {
                     initialCost = cost.value * 2;
                     runningCost = cost.value;
                   }
-                  
-                  console.log("Costs", cost.unit);
-                  
+
+                  console.log('Costs', cost.unit);
+
                   // Gib das JSX-Element zurück
                   return (
                     <TableRow key={cost.label}>
@@ -81,15 +80,15 @@ const CostDetails: React.FC<ConfigProps> = ({ config }) => {
                       </TableCell>
                       <TableCell>
                         <Typography>
-                          {new Intl.NumberFormat("de-DE", {
-                            style: "currency",
+                          {new Intl.NumberFormat('de-DE', {
+                            style: 'currency',
                             currency: config.constants.dailyrate.currency,
                           }).format(initialCost)}
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        {new Intl.NumberFormat("de-DE", {
-                          style: "currency",
+                        {new Intl.NumberFormat('de-DE', {
+                          style: 'currency',
                           currency: config.constants.dailyrate.currency,
                         }).format(runningCost)}
                       </TableCell>

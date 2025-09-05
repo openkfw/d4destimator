@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
-export interface Cost  {
+export interface Cost {
   label: string;
   tooltip?: string;
   value: number;
