@@ -4,7 +4,7 @@
   "version": "0.1",
   "parameters": {
     "users": {
-      "label": "Users",
+      "label": "End Users (daily active)",
       "tooltip": "Number of end users who will actively use the system. This affects training costs, change management complexity, and overall infrastructure requirements.",
       "values": [
         {
@@ -33,7 +33,7 @@
       ]
     },
     "integrations": {
-      "label": "Integrated Systems",
+      "label": "External System Connections",
       "tooltip": "Number of external systems that need to be integrated with this solution via APIs or other interfaces. More integrations increase development time, security considerations, and ongoing maintenance requirements.",
       "values": [
         {
@@ -63,7 +63,7 @@
       ]
     },
     "organisationalComplexity": {
-      "label": "Organisational complexity",
+      "label": "Organization Structure Complexity",
       "tooltip": "How complicated is the organisational structure of the company? More complex structures will require additional implementation ressources, change management and training efforts.",
 
       "values": [
@@ -107,7 +107,7 @@
       ]
     },
     "infrastructureLocation": {
-      "label": "Infrastructure location",
+      "label": "Hosting & Infrastructure",
       "tooltip": "Where is the infrastructure located. The own datacenter will take more time to set up compared to cloud solutions and typically lead to more initial investment.",
 
       "values": [
@@ -136,7 +136,7 @@
       ]
     },
     "cybersecurity": {
-      "label": "Cybersecurity criticality",
+      "label": "Data Security Requirements",
       "tooltip": "How important is cybersecurity for the organization? High requirements on data protection necessitate additional resources.",
       "values": [
         {
@@ -192,63 +192,63 @@
       "unit": "dailyrate"
     },
     "infrastructureConfiguration": {
-      "label": "Infrastructure configuration",
+      "label": "Server & Cloud Setup",
       "value": 0.8,
-      "category": "Technical Staff",
+      "category": "IT infrastructure",
       "unit": "dailyrate",
       "tooltip": "Effort to provision, configure and harden infrastructure components such as servers, networks and cloud services."
     },
     "integrationSystems": {
-      "label": "Integration of other systems via API",
+      "label": "API & System Integration",
       "value": 1.0,
       "category": "Technical Staff",
       "unit": "dailyrate",
       "tooltip": "Effort to design, implement and test integrations with external systems (APIs, ETL, connectors)."
     },
     "securitySetup": {
-      "label": "Security setup",
+      "label": "Security & Access Controls",
       "value": 0,
       "category": "Technical Staff",
       "unit": "dailyrate",
       "tooltip": "Work required to implement security measures, access controls, encryption and compliance-related tasks."
     },
     "monitoringSetup": {
-      "label": "Monitoring setup",
+      "label": "Monitoring & Alerting",
       "value": 0,
-      "category": "Technical Staff",
+      "category": "IT infrastructure",
       "unit": "dailyrate",
       "tooltip": "Effort to configure monitoring, alerting and observability for operations and incident response."
     },
     "documentationAdaptation": {
-      "label": "Adapt documentation to local requirements",
+      "label": "Documentation & Training Materials",
       "value": 3,
-      "category": "Technical Staff",
+      "category": "Non-technical Staff",
       "unit": "dailyrate",
       "tooltip": "Effort to adapt user guides, technical documentation and runbooks to the customer's environment and processes."
     },
     "changeManagement": {
-      "label": "Change Management business processes",
+      "label": "Change Management & Process Adoption",
       "tooltip": "The structured approach to transitioning individuals and teams from current business processes to new ones. Includes stakeholder communication, training material updates, process documentation, and ensuring user adoption of new workflows.",
       "value": 2,
       "category": "Non-technical Staff",
       "unit": "dailyrate"
     },
     "adminTraining": {
-      "label": "Administrator training",
+      "label": "Admin & Technical Training",
       "value": 1,
       "category": "Non-technical Staff",
       "unit": "dailyrate",
       "tooltip": "Training effort for administrators and support staff to operate and maintain the solution."
     },
     "userTraining": {
-      "label": "User training",
+      "label": "End User Training",
       "value": 1,
       "category": "Non-technical Staff",
       "unit": "dailyrate",
       "tooltip": "Effort to prepare and deliver training for end users, including materials and sessions."
     },
     "adminOverhead": {
-      "label": "Management overhead",
+      "label": "Project Management & Coordination",
       "value": 3,
       "category": "Non-technical Staff",
       "unit": "dailyrate",

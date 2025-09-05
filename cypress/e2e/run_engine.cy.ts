@@ -1,17 +1,16 @@
-import estimatorConfig from "../../src/assets/dashboard_config.json";
-import runEngine from "../../src/utils/runEngine";
+import estimatorConfig from '../../src/assets/dashboard_config.json';
+import runEngine from '../../src/utils/runEngine';
 
-describe("Test the estimator config", () => {
-  it("We should be able to run the engine", () => {
-    const result = runEngine(estimatorConfig)
+describe('Test the estimator config', () => {
+  it('We should be able to run the engine', () => {
+    const result = runEngine(estimatorConfig);
 
-    expect(result).to.have.property("flavour");
+    expect(result).to.have.property('flavour');
     const adminOverhead = result.costs.adminOverhead.value;
-    console.log("Admin overhead", adminOverhead);
+    console.log('Admin overhead', adminOverhead);
     expect(adminOverhead).to.equal(15000);
-    
   });
-  it("Dummy test", () => {
+  it('Dummy test', () => {
     expect(true).to.equal(true);
   });
 });
