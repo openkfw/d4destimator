@@ -10,7 +10,7 @@ import runEngine from '../utils/runEngine';
 import estimatorConfig from '../assets/dashboard_config.json';
 import { EstimatorConfig } from '../types/estimatorConfigType';
 
-import { Box, Container, Paper} from '@mui/material';
+import { Box, Container, Paper } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import GeneratedConstants from '../components/GeneratedConstants';
 
@@ -37,8 +37,6 @@ function App() {
           flexDirection: 'column',
         }}
       >
-
-
         {/* Content */}
         <Container sx={{ flex: 1, py: 4 }}>
           <Grid
@@ -98,7 +96,6 @@ function App() {
             </Grid>
           </Grid>
         </Container>
-
       </Box>
     </div>
   );
