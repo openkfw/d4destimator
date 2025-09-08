@@ -1,6 +1,6 @@
 import React from 'react';
-import GeneratedConstants from './GeneratedConstants';
-import estimatorConfig from '../../src/assets/estimatorconfig.json';
+import GeneratedConstants from '../../../src/components/GeneratedConstants';
+import estimatorConfig from '../../../src/assets/estimatorconfig.json';
 
 describe('<GeneratedConstants />', () => {
   it('renders', () => {

@@ -4,16 +4,16 @@ import './App.css';
 
 import CostOverview from '../components/CostOverview';
 
-import GeneratedEstimator from './components/GeneratedEstimator';
-import runEngine from './utils/runEngine';
+import GeneratedEstimator from '../components/GeneratedEstimator';
+import runEngine from '../utils/runEngine';
 
-import estimatorConfig from './assets/dashboard_config.json';
-import { EstimatorConfig } from './types/estimatorConfigType';
+import estimatorConfig from '../assets/dashboard_config.json';
+import { EstimatorConfig } from '../types/estimatorConfigType';
 
 import { AppBar, Box, Container, Paper, Toolbar, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import GeneratedConstants from './components/GeneratedConstants';
+import GeneratedConstants from '../components/GeneratedConstants';
 
 const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
 

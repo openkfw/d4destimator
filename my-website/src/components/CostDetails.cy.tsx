@@ -1,6 +1,6 @@
 import React from 'react';
 import CostDetails from './CostDetails';
-import estimatorConfig from '../../src/assets/estimatorconfig.json';
+import estimatorConfig from '../../../src/assets/estimatorconfig.json';
 
 describe('<CostDetails />', () => {
   it('renders', () => {

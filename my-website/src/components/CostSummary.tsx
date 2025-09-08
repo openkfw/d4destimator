@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Paper } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
-import { CostTotals } from '../types/CostTotals';
+import { CostTotals } from '../../../src/types/CostTotals';
 
 const CostSummary = ({ totalInitial, totalRun, totalTCO, tCODuration }: CostTotals) => {
   //do some formatting

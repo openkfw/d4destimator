@@ -5,7 +5,7 @@ import React from 'react';
 
 import runEngine from '../utils/runEngine';
 import { GeneratedConstantsProps } from '../types/estimatorConfigType';
-import TooltipWrapper from '../../my-website/src/components/TooltipWrapper';
+import TooltipWrapper from './TooltipWrapper';
 
 const GeneratedConstants: React.FC<GeneratedConstantsProps> = ({
   estimatorConfig,
