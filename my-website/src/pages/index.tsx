@@ -1,44 +1,142 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+import React, { useEffect, useState } from 'react';
 
-import styles from './index.module.css';
+import './App.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+import CostOverview from '../components/CostOverview';
+
+import GeneratedEstimator from '../components/GeneratedEstimator';
+import runEngine from '../utils/runEngine';
+
+import estimatorConfig from '../assets/dashboard_config.json';
+import { EstimatorConfig } from '../types/estimatorConfigType';
+
+import { AppBar, Box, Container, Paper, Toolbar, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GeneratedConstants from '../components/GeneratedConstants';
+
+const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
+
+function App() {
+  const [calculation, setCalculation] = useState(estimatorConfigTyped);
+  useEffect(() => {
+    const result = runEngine(estimatorConfigTyped);
+    setCalculation(result);
+
+    console.log('Running engine:', result);
+  }, []);
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
+    <div className="App">
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background:
+            ' linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,48,5,1) 35%, rgba(19,4,136,1) 100%)',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        {/* Header */}
+        <AppBar position="static" sx={{ backgroundColor: '#333' }}>
+          <Toolbar>
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+              D4D Cost Estimator for digital systems
+            </Typography>
+            <a
+              href="https://github.com/openkfw/d4destimator"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'white',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <GitHubIcon sx={{ marginRight: 1 }} />
+              What&apos;s behind it ?
+            </a>
+          </Toolbar>
+        </AppBar>
+
+        {/* Content */}
+        <Container sx={{ flex: 1, py: 4 }}>
+          <Grid
+            container
+            spacing={4}
+            sx={{
+              height: '100%',
+            }}
+          >
+            {/* Left Side */}
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 2,
+                  backgroundColor: 'rgba(255, 255, 255, 1.0)',
+                }}
+              >
+                <div>
+                  <GeneratedEstimator
+                    estimatorConfig={calculation}
+                    setCalculation={setCalculation}
+                  />
+                </div>
+              </Paper>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  my: 2,
+                  borderRadius: 2,
+                  backgroundColor: 'rgba(255, 255, 255, 1.0)',
+                }}
+              >
+                <div>
+                  <GeneratedConstants
+                    estimatorConfig={calculation}
+                    setCalculation={setCalculation}
+                  />
+                </div>
+              </Paper>
+            </Grid>
+
+            {/* Right Side */}
+            <Grid size={{ xs: 12, md: 8 }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 2,
+                  backgroundColor: 'rgba(255, 255, 255, 0.)',
+                }}
+              >
+                <CostOverview config={calculation} />
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
+
+        {/* Footer */}
+        <Box
+          component="footer"
+          sx={{
+            py: 2,
+            textAlign: 'center',
+            backgroundColor: '#333',
+          }}
+        >
+          <Typography variant="body2" color="white">
+            Enjoy the ride.
+          </Typography>
+        </Box>
+      </Box>
+    </div>
   );
 }
 
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
-}
+export default App;
