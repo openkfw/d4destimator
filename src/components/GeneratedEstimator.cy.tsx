@@ -1,13 +1,13 @@
 import React from 'react';
 import GeneratedEstimator from './GeneratedEstimator';
 
-import estimatorConfig from '../../../src/assets/estimatorconfig.json';
-
+import estimatorConfig from '../assets/estimatorconfig.json';
+import { mount } from 'cypress/react'
 describe('<GeneratedEstimator />', () => {
   const mockSetCalculation = () => {};
 
   it('renders', () => {
-    cy.mount(
+    mount(
       <GeneratedEstimator estimatorConfig={estimatorConfig} setCalculation={mockSetCalculation} />
     );
   });

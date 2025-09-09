@@ -1,10 +1,10 @@
 import React from 'react';
 import TooltipWrapper from './TooltipWrapper';
 import { Button } from '@mui/material';
-
+import { mount } from 'cypress/react'
 describe('<TooltipWrapper />', () => {
   it('renders children without tooltip when no tooltip prop provided', () => {
-    cy.mount(
+    mount(
       <TooltipWrapper>
         <Button data-testid="test-button">Test Button</Button>
       </TooltipWrapper>
@@ -16,7 +16,7 @@ describe('<TooltipWrapper />', () => {
   });
 
   it('handles empty string tooltip as no tooltip', () => {
-    cy.mount(
+    mount(
       <TooltipWrapper tooltip="">
         <Button data-testid="test-button">Test Button</Button>
       </TooltipWrapper>
@@ -28,7 +28,7 @@ describe('<TooltipWrapper />', () => {
   });
 
   it('renders with question mark icon when tooltip is provided', () => {
-    cy.mount(
+    mount(
       <TooltipWrapper tooltip="Help text for icon">
         <Button data-testid="test-button">Test Button</Button>
       </TooltipWrapper>
@@ -46,7 +46,7 @@ describe('<TooltipWrapper />', () => {
   it('shows tooltip when hovering over question mark icon', () => {
     const tooltipText = 'This is help text for the icon';
 
-    cy.mount(
+    mount(
       <TooltipWrapper tooltip={tooltipText}>
         <Button data-testid="test-button">Test Button</Button>
       </TooltipWrapper>
@@ -61,7 +61,7 @@ describe('<TooltipWrapper />', () => {
   });
 
   it('positions icon at end by default', () => {
-    cy.mount(
+    mount(
       <TooltipWrapper tooltip="Help text">
         <span data-testid="test-content">Content</span>
       </TooltipWrapper>
@@ -78,7 +78,7 @@ describe('<TooltipWrapper />', () => {
   it('follows WCAG accessibility guidelines', () => {
     const tooltipText = 'Accessible help information';
 
-    cy.mount(
+    mount(
       <TooltipWrapper tooltip={tooltipText}>
         <Button data-testid="test-button">Main Button</Button>
       </TooltipWrapper>
@@ -98,7 +98,7 @@ describe('<TooltipWrapper />', () => {
   });
 
   it('handles no tooltip gracefully', () => {
-    cy.mount(
+    mount(
       <TooltipWrapper>
         <Button data-testid="test-button">Test Button</Button>
       </TooltipWrapper>

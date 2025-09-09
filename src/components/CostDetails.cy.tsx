@@ -1,15 +1,15 @@
 import React from 'react';
 import CostDetails from './CostDetails';
-import estimatorConfig from '../../../src/assets/estimatorconfig.json';
-
+import estimatorConfig from '../assets/estimatorconfig.json';
+import { mount } from 'cypress/react'
 describe('<CostDetails />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<CostDetails config={estimatorConfig} />);
+    mount(<CostDetails config={estimatorConfig} />);
   });
 
   it('displays table with cost data', () => {
-    cy.mount(<CostDetails config={estimatorConfig} />);
+    mount(<CostDetails config={estimatorConfig} />);
 
     // Should render table structure
     cy.get('table').should('exist');
