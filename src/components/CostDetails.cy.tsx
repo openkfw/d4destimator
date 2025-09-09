@@ -1,7 +1,7 @@
 import React from 'react';
 import CostDetails from './CostDetails';
 import estimatorConfig from '../assets/estimatorconfig.json';
-import { mount } from 'cypress/react'
+import { mount } from 'cypress/react';
 describe('<CostDetails />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react

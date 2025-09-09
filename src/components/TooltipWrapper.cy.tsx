@@ -1,7 +1,7 @@
 import React from 'react';
 import TooltipWrapper from './TooltipWrapper';
 import { Button } from '@mui/material';
-import { mount } from 'cypress/react'
+import { mount } from 'cypress/react';
 describe('<TooltipWrapper />', () => {
   it('renders children without tooltip when no tooltip prop provided', () => {
     mount(

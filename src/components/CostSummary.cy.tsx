@@ -1,6 +1,6 @@
 import React from 'react';
 import CostSummary from './CostSummary';
-import { mount } from 'cypress/react'
+import { mount } from 'cypress/react';
 describe('<CostSummary />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
