@@ -1,15 +1,8 @@
 {
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "./src",
-    "jsx": "react",
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "paths": {
-      "~*": ["./*"]
-    },
-    "strict": true,
-    "target": "ES2015",
-    "module": "ES2015"
+    "baseUrl": "."
   },
-  "exclude": ["**/*.cy.tsx"]
+  "exclude": [".docusaurus", "build","**/*.cy.tsx"]
 }

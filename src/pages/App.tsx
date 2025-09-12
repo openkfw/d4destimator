@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 
 import './App.css';
 
-import CostOverview from './components/CostOverview';
+import CostOverview from '../components/CostOverview';
 
-import GeneratedEstimator from './components/GeneratedEstimator';
-import runEngine from './utils/runEngine';
+import GeneratedEstimator from '../components/GeneratedEstimator';
+import runEngine from '../utils/runEngine';
 
-import estimatorConfig from './assets/dashboard_config.json';
-import { EstimatorConfig } from './types/estimatorConfigType';
+import estimatorConfig from '../assets/dashboard_config.json';
+import { EstimatorConfig } from '../types/estimatorConfigType';
 
-import { AppBar, Box, Container, Paper, Toolbar, Typography } from '@mui/material';
+import { Box, Container, Paper } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GeneratedConstants from './components/GeneratedConstants';
+import GeneratedConstants from '../components/GeneratedConstants';
 
 const estimatorConfigTyped: EstimatorConfig = estimatorConfig;
 
@@ -38,29 +37,6 @@ function App() {
           flexDirection: 'column',
         }}
       >
-        {/* Header */}
-        <AppBar position="static" sx={{ backgroundColor: '#333' }}>
-          <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              D4D Cost Estimator for digital systems
-            </Typography>
-            <a
-              href="https://github.com/openkfw/d4destimator"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <GitHubIcon sx={{ marginRight: 1 }} />
-              What&apos;s behind it ?
-            </a>
-          </Toolbar>
-        </AppBar>
-
         {/* Content */}
         <Container sx={{ flex: 1, py: 4 }}>
           <Grid
@@ -120,20 +96,6 @@ function App() {
             </Grid>
           </Grid>
         </Container>
-
-        {/* Footer */}
-        <Box
-          component="footer"
-          sx={{
-            py: 2,
-            textAlign: 'center',
-            backgroundColor: '#333',
-          }}
-        >
-          <Typography variant="body2" color="white">
-            Enjoy the ride.
-          </Typography>
-        </Box>
       </Box>
     </div>
   );

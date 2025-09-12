@@ -1,10 +1,10 @@
 import React from 'react';
 import CostOverview from './CostOverview';
-import estimatorConfig from '../../src/assets/estimatorconfig.json';
-
+import estimatorConfig from '../assets/estimatorconfig.json';
+import { mount } from 'cypress/react';
 describe('<CostOverview />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<CostOverview config={estimatorConfig} />);
+    mount(<CostOverview config={estimatorConfig} />);
   });
 });
