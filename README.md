@@ -16,7 +16,7 @@ The calculation of cost for change and run of the digital solution is depicted i
 
 # Configuration and tuning of parameters
 
-In order to configure new parameters and the effort factors for the engine, update the file `estimator.json` with respective values.
+In order to configure new parameters and the effort factors for the engine, update the file `estimator.json` with respective values. 
 
 # Local development
 
